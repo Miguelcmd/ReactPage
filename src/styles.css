@@ -1,0 +1,46 @@
+.tarjetas-container {
+    padding: 5px;
+    text-align: center; /* Centra el contenido */
+    border: 2px solid #000000;
+    
+}
+
+.tarjetas-grid {
+    display: flex;
+    justify-content: center; /* Centra las tarjetas horizontalmente */
+    flex-wrap: wrap; /* Permite que las tarjetas se envuelvan en varias filas */ 
+    margin: 40px auto 40px auto;   
+}
+
+.card {
+    margin: 1%; /* Espacio entre tarjetas */
+    border: 2px solid #000000;
+}
+.card:hover {
+    transform: scale(1.05);
+    transition: 0.25s;
+    box-shadow: 9px 9px 10px 0px rgba(0, 0, 0, 0.267);
+    -moz-transform: scale(1.4) rotate(9deg) translate(0px, 9px) skew(-1deg, 1deg);
+    -webkit-transform: scale(1.4) rotate(1deg) translate(0px, 9px) skew(-1deg, 1deg);
+    -o-transform: scale(1.4) rotate(1deg) translate(0px, 9px) skew(-1deg, 1deg);
+    -ms-transform: scale(1.4) rotate(1deg) translate(0px, 9px) skew(-1deg, 1deg);
+     transform: scale(1.04) rotate(0.3deg) translate(0px, 9px) skew(-1deg, 1deg);
+}
+    
+
+.image-container {
+    width: 270px; /* Ajusta el tamaño del contenedor de la imagen */
+    height: 200px; /* Ajusta la altura también */
+    overflow: hidden;
+    margin: 10px auto 1px auto; /* Centrar el contenedor dentro de la tarjeta */
+    
+    border-radius: 2%; /* Hacer el contenedor redondo */
+    border: 2px solid #080808; /* Borde opcional */
+}
+
+/* Imagen dentro del contenedor */
+.image-container img {
+    width: 100%; /* Asegura que la imagen ocupe todo el contenedor */
+    height:auto; /* Mantiene la proporción de la imagen */
+    display: block;
+}

@@ -1,38 +1,113 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #fefeff96;
+  min-height: 9vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: calc(40px + 5vmin); 
+  color: rgb(0, 0, 0);
 }
 
 .App-link {
   color: #61dafb;
 }
+/* Estilos básicos para el cuerpo */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Estilos del contenedor del menú */
+nav {
+  display: flex;
+  justify-content: flex-end;
+  background-color: #ffffff;
+  padding: 10px;
+  gap: 10px;
+  right: 45px;
+  top: 15px;
+}
+
+.menu {
+  list-style-type: none;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  left: -100%; /* Inicialmente, oculto a la izquierda */
+  width: 250px;
+  height: 100%;
+  background-color: white;
+  transition: left 1s ease; /* Transición suave al desplegar */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0);
+}
+
+.menu li {
+  padding: 15px 20px;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: black;
+  position: relative;
+}
+
+.menu li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: rgb(252, 0, 0);
+  left: 0;
+  bottom: -2px;
+  transition: width 0.3s ease-in-out;
+}
+
+.menu li a:hover::after {
+  width: 100%;
+}
+
+/* Mostramos el menú cuando esté activo */
+.menu.active {
+  display: flex;
+  justify-content: flex-end;
+  z-index: 100;
+  padding: 5px;
+  transition: width 0.3s ease-in;
+ 
+}
+
+nav {
+  position: relative; /* Lo hacemos posicionable */
+  z-index: 100; /* Colocamos todo el contenedor sobre otros elementos */
+
+}
+
+
+/* Ajustamos el menú para pantallas grandes */
+@media (min-width: 768px) {
+  .menu {
+      display: flex;
+      position: static;
+      width: auto;
+      background-color: transparent;
   }
-  to {
-    transform: rotate(360deg);
+
+  .menu-hamburguesa {
+      display: none;
+  }
+
+  .menu li {
+      padding: 0;
+  }
+
+  .menu li a {
+      padding: 4px 10px;
+  }
+
+  .menu li a::after {
+      bottom: -3px;
   }
 }
+
