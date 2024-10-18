@@ -1,0 +1,47 @@
+/* Desenfocar el fondo */
+.blur-background {
+    filter: blur(50px);
+    pointer-events: none; /* Para que no se pueda interactuar con el fondo mientras el registro está abierto */
+  }
+  
+  /* Contenedor de registro */
+  .registro-container {
+    position: fixed;
+    height: 60vh;
+    top: 15%;
+    left: 36%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    border: 2px solid black;    
+    box-shadow: 2px 0 15px rgba(5, 5, 5, 0.644);
+    z-index: 10; /* Asegúrate de que esté sobre todo lo demás */
+  }
+  
+  /* Contenido dentro del contenedor de registro */
+  .registro-content {
+    text-align: center;
+  }
+  
+  .registro-content h2 {
+    margin-bottom: 10px;
+  }
+  
+  .registro-content p {
+    margin-bottom: 20px;
+  }
+  
+  .registro-content button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .registro-content button:hover {
+    background-color: #0056b3;
+  }
+  
