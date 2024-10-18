@@ -2,8 +2,13 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import './Menu.css';
 
-const Menu = () => {
+const Menu = (setShowRegistro) => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const handleRegistroClick = () => {
+    setShowRegistro(true); // Cambia el estado al hacer clic
+  };
+
 
   // Variants para la animación del menú
   const menuVariants = {
@@ -50,7 +55,7 @@ const Menu = () => {
         animate={isOpen ? "open" : "closed"}
       >
         <ul className="menu-items">
-          <li><a href="#">Registro</a></li>
+        <li><button onClick={handleRegistroClick}>Registro</button></li>
           <li><a href="#">Inicio de Sesión</a></li>
           <li><a href="#">Carrito</a></li>
         </ul>

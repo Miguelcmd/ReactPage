@@ -9,7 +9,7 @@ const Tarjeta = ({ title, description, imageUrl }) => {
             <div className="card-body">
                 <h5 className="card-title">{title}</h5>
                 <p className="card-text">{description}</p>
-                <button id="btn-detalle" className="btn btn-outline-dark">Reservar</button>
+                <button id="btn-detalle" className="btn btn-outline-dark">Detalle</button>
             </div>
         </div>
     );
