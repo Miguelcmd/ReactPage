@@ -1,16 +1,9 @@
-
 import React, { useState } from 'react';
-import './App.css';  // Estilos generales, como el logo y otros
-import './styles.css'; // Estilos específicos para las tarjetas
+import './App.css';  // Estilos generales
+import Menu from './components/Menu';
 import Tarjeta from './components/Tarjeta';
 
 const App = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
-
   const tarjetas = [
     {
       title: "Título 1",
@@ -34,35 +27,25 @@ const App = () => {
     },
   ];
 
-    return (
-      <div className="app-container">        
-        <header>
-          <nav>            
-            <ul className={`menu ${menuOpen ? 'active' : ''}`}>
-              <li><a href="#">Registro</a></li>
-              <li><a href="#">Inicio de Sesión</a></li>
-              <li><a href="#">Carrito</a></li>
-            </ul>
-          </nav>
-          
-          <div className="App-header">
-            <p>Reservas.com</p>            
-          </div>
-        </header>
-  
-        {/* Tarjetas */}
-        <div className="tarjetas-grid">
-          {tarjetas.map((tarjeta, index) => (
-            <Tarjeta 
-              key={index} 
-              title={tarjeta.title} 
-              description={tarjeta.description} 
-              imageUrl={tarjeta.imageUrl} 
-            />
-          ))}
+  return (
+    <div className="app-container">        
+      <header>
+        <Menu />
+        <div className="App-header">
         </div>
+      </header>
+      <div className="tarjetas-grid">
+        {tarjetas.map((tarjeta, index) => (
+          <Tarjeta 
+            key={index} 
+            title={tarjeta.title} 
+            description={tarjeta.description} 
+            imageUrl={tarjeta.imageUrl} 
+          />
+        ))}
       </div>
-    );
-  };
-  
-  export default App;
+    </div>
+  );
+}
+
+export default App;

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './Tarjeta.css';
 const Tarjeta = ({ title, description, imageUrl }) => {
     return (
         <div className="card" style={{ width: '18rem', height: '20em' }}>
