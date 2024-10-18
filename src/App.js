@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './App.css';  // Estilos generales
 import Menu from './components/Menu';
 import Tarjeta from './components/Tarjeta';
-
+import Title from './components/Title';
 const App = () => {
   const tarjetas = [
     {
@@ -31,6 +31,7 @@ const App = () => {
     <div className="app-container">        
       <header>
         <Menu />
+        <Title />
         <div className="App-header">
         </div>
       </header>
