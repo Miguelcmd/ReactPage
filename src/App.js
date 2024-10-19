@@ -4,6 +4,7 @@ import Menu from './components/Menu';
 import Tarjeta from './components/Tarjeta';
 import Title from './components/Title';
 import Registro from './components/Pages/Registro/Registro';
+import Logo from './components/Logo'
 
 const App = () => {
   const [showRegistro, setShowRegistro] = useState(false);
@@ -22,6 +23,7 @@ const App = () => {
         {showRegistro && <Registro />}
         <Title />
         <Registro showRegistro={showRegistro} setShowRegistro={setShowRegistro} />
+        <Logo/>
       </header>
       <div className="tarjetas-grid">
         {tarjetas.map((tarjeta, index) => (
@@ -31,6 +33,7 @@ const App = () => {
             description={tarjeta.description} 
             imageUrl={tarjeta.imageUrl} 
           />
+          
         ))}
       </div>
 
