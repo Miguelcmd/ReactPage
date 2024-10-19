@@ -1,25 +1,18 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import './Menu.css'; // Importación del CSS del menú
-import './Pages/Registro/Registro.css'; // Importación del CSS para el formulario de registro
 
-const Menu = () => {
+const Menu = ({ setShowRegistro }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [showRegistro, setShowRegistro] = useState(false); // Estado para mostrar el contenedor de registro
 
   // Función para alternar el menú
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  // Función para mostrar el formulario de registro
+  // Función para manejar el click en el botón de registro
   const handleRegistroClick = () => {
     setShowRegistro(true);
-  };
-
-  // Función para cerrar el formulario de registro
-  const closeRegistro = () => {
-    setShowRegistro(false);
   };
 
   // Variants para la animación del menú desplegable
@@ -58,7 +51,6 @@ const Menu = () => {
           />
         ))}
       </div>
-      <div className={`app-container ${showRegistro ? 'blur-background' : ''}`}></div>
 
       {/* Menú desplegable */}
       <motion.nav
@@ -73,24 +65,6 @@ const Menu = () => {
           <li><a href="#">Carrito</a></li>
         </ul>
       </motion.nav>
-
-      {/* Contenedor del formulario de registro */}
-      <AnimatePresence>
-        {showRegistro && (
-          <motion.div
-            className="registro-container"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.8 }}
-          >
-            <div className="registro-content">
-              <h2>Formulario de Registro</h2>
-              <p>Aquí puedes poner tu formulario de registro.</p>
-              <button onClick={closeRegistro}>Cerrar</button>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </div>
   );
 };

@@ -1,15 +1,10 @@
-/* Desenfocar el fondo */
-.blur-background {
-    filter: blur(50px);
-    pointer-events: none; /* Para que no se pueda interactuar con el fondo mientras el registro está abierto */
-  }
-  
-  /* Contenedor de registro */
+   /* Contenedor de registro */
   .registro-container {
-    position: relative;
-    height: 60%;
-    width: 60%;
-   
+    position: fixed;
+    height: 40%;
+    width: 40%;
+    top: 170px;
+    left: 30vw;
     transform: translate(-50%, -50%);
     background-color: white;
     padding: 20px;
