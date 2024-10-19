@@ -1,6 +1,6 @@
 /* Contenedor de registro */
 .registro-container {
-  position: fixed;
+  position:fixed;
   height: 70vh;
   left: 33vw;
   top: 20vh;  
