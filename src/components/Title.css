@@ -4,6 +4,8 @@
     flex-direction: row; /* Coloca "Reservas" y el dominio en columna */
     align-items: center; /* Centra horizontalmente */
     position: relative; /* Permite superposición */
+    top: 25px;
+    
   }
   
   .app-title {

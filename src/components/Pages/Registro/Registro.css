@@ -6,10 +6,10 @@
   
   /* Contenedor de registro */
   .registro-container {
-    position: fixed;
-    height: 60vh;
-    top: 15%;
-    left: 36%;
+    position: relative;
+    height: 60%;
+    width: 60%;
+   
     transform: translate(-50%, -50%);
     background-color: white;
     padding: 20px;
@@ -43,5 +43,12 @@
   
   .registro-content button:hover {
     background-color: #0056b3;
+  }
+  
+
+  @media (max-width: 768px) {
+    .registro-container {
+      width: 50%; /* Ajusta el tamaño para dispositivos pequeños */
+    }
   }
   
