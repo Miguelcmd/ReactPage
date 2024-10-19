@@ -1,0 +1,46 @@
+.circle-container {
+  position: fixed;
+  bottom: 10px;
+  right: 30px;
+  width: 250px;  /* Ajusta según sea necesario */
+  height: 250px; /* Ajusta según sea necesario */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.center-logo {
+  position: absolute;
+  width: 130px; /* Ajusta el tamaño del logo según tu necesidad */
+  height: 130px; 
+  z-index: 1; /* Asegúrate de que la imagen esté encima de las letras */
+  top: calc(50% - 40px); /* Centra la imagen verticalmente */
+  left: calc(50% - 50px); /* Centra la imagen horizontalmente */
+}
+
+.text-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centra el contenedor de texto */
+  animation: rotate 20s linear infinite; /* Animación continua */
+}
+
+.text {
+  position: absolute;
+  font-size: 20px; /* Ajusta el tamaño de la fuente según tu necesidad */
+  transform-origin: center center; /* Asegúrate de que el origen de la transformación esté en el centro */
+  z-index: 0; /* Asegúrate de que las letras estén debajo del logo */
+  white-space: nowrap; /* Evita que las letras se apilen */
+}
+
+/* Animación que hace rotar el contenedor de texto */
+@keyframes rotate {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg); /* Hace girar todo el contenedor de texto */
+  }
+}

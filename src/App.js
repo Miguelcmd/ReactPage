@@ -4,7 +4,7 @@ import Menu from './components/Menu';
 import Tarjeta from './components/Tarjeta';
 import Title from './components/Title';
 import Registro from './components/Pages/Registro/Registro';
-import Logo from './components/Logo'
+import Logo from './components/Pages/Logo/Logo'
 
 const App = () => {
   const [showRegistro, setShowRegistro] = useState(false);
