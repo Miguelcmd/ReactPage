@@ -17,23 +17,20 @@ const Registro = ({ showRegistro, setShowRegistro }) => {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
           >
-            <div className="registro-content">
-              {/* Botón de cierre en la esquina superior derecha */}
+            <div className="registro-content">              
               <button className="close-button" onClick={closeRegistro}>X</button>
-
-              {/* Contenedor de la imagen en la parte superior derecha */}
-             
+                         
               <h2>Formulario de Registro</h2>
 
-              {/* Campos de registro */}
+              {/* Formulario de registro */}
               <form className="registro-form">
                 <div className="form-group">
                   <label htmlFor="email">Correo electrónico:</label>
-                  <input type="email" id="email" placeholder="Ingresa tu correo" />
+                  <input type="email" id="registro-email" placeholder="Ingresa tu correo" />
                 </div>
                 <div className="form-group">
                   <label htmlFor="password">Contraseña:</label>
-                  <input type="password" id="password" placeholder="Ingresa tu contraseña" />
+                  <input type="password" id="registro-password" placeholder="Ingresa tu contraseña" />
                 </div>
                 <div className="form-group">
                   <label htmlFor="confirm-password">Confirmar contraseña:</label>
