@@ -7,7 +7,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
+  }
 
 .center-logo {
   position: absolute;
@@ -16,7 +16,10 @@
   z-index: 1; /* Asegúrate de que la imagen esté encima de las letras */
   top:37%;
   right: 17%;
-} 
+  border: 1px solid black;
+  border-radius: 500px;
+  background: rgb(227, 233, 197)
+ } 
 
 .text-container {
   position: absolute; /* Mantén la posición absoluta */
@@ -29,7 +32,7 @@
 
 .text {
   position: absolute;
-  font-size: 16px; /* Ajusta el tamaño de la fuente según tu necesidad */
+  font-size: 18px; /* Ajusta el tamaño de la fuente según tu necesidad */
   transform-origin: 0 0; /* Cambia el origen de la transformación */
   z-index: 0; /* Asegúrate de que las letras estén debajo del logo */
   white-space: nowrap; /* Evita que las letras se apilen */
