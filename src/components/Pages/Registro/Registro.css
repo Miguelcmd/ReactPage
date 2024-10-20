@@ -21,14 +21,15 @@
 /* Botón de cierre (esquina superior derecha) */
 .close-button {
   position: absolute;
-  top: 1px;
-  right: 1px;
+  top: 10px;
+  right: 15px;
   background: none;
   border-radius: 8px;
   border: none;
   font-size: 20px;
   cursor: pointer;
   color: #000;
+  
    
 }
 
@@ -86,9 +87,32 @@
   color: white;
 }
 
+
+
 @media (max-width: 768px) {
   .registro-container {
     width: 50%;
     height: auto;
   }
 }
+
+/* Overlay para el formulario de registro */
+.registro-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999; 
+  pointer-events: auto; /* Asegura que el formulario sea interactivo */
+}
+
+/* Evitar desenfocar el registro */
+.registro-overlay * {
+  filter: none; /* Asegura que el registro no se desenfoque */
+}
+

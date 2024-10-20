@@ -20,5 +20,13 @@ body {
   padding: 0;
 }
 
+/* Mantén el desenfoque solo para el fondo */
+.blur-background {
+  filter: blur(3px);
+}
+
+
+
+
 
 

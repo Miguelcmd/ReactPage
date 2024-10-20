@@ -1,34 +1,35 @@
 .circle-container {
   position: fixed; /* Cambiar a fixed para que permanezca en la pantalla */
-  bottom: 20px; /* Distancia desde la parte inferior de la pantalla */
-  right: 20px; /* Distancia desde el lado derecho de la pantalla */
-  width: 250px;  /* Ajusta según sea necesario */
+  bottom: 1px; /* Distancia desde la parte inferior de la pantalla */
+  right: 25px; /* Distancia desde el lado derecho de la pantalla */
+  width: 200px; /* Ajusta según sea necesario */
   height: 250px; /* Ajusta según sea necesario */
   display: flex;
   justify-content: center;
   align-items: center;
-  }
-
-.center-logo {
-  position: absolute;
-  width: 115px; /* Ajusta el tamaño del logo según tu necesidad */
-  height: 115px; 
-  z-index: 1; /* Asegúrate de que la imagen esté encima de las letras */
-  top:37%;
-  right: 17%;
-  border: 1px solid black;
-  border-radius: 500px;
-  background: rgb(227, 233, 197)
- } 
+  border: none;
+}
 
 .text-container {
   position: absolute; /* Mantén la posición absoluta */
   width: 100%; /* Tomar todo el ancho del contenedor */
   height: 100%; /* Tomar todo el alto del contenedor */
-  top: 10%; /* Centra verticalmente */
-  left: 10%; /* Centra horizontalmente */
-  transform: translate(-50%, -50%); /* Asegura que el contenedor esté centrado */
-  }
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Asegura que el contenedor esté centrado */
+  border: none;
+}
+
+.center-logo {
+  position: absolute;
+  width: 115px;
+  height: 115px;
+  z-index: 1;
+  border: none;
+  border-radius: 500px;
+  background: rgb(227, 233, 197);
+}
 
 .text {
   position: absolute;
