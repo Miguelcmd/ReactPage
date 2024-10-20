@@ -5,9 +5,11 @@ import Tarjeta from "./components/Tarjeta";
 import Title from "./components/Title";
 import Registro from "./components/Pages/Registro/Registro";
 import Logo from "./components/Pages/Logo/Logo";
+import Login from "./components/Pages/Login/Login";
 
 const App = () => {
   const [showRegistro, setShowRegistro] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
 
   const tarjetas = [
     {
@@ -33,10 +35,11 @@ const App = () => {
   ];
 
   return (
-    <div className="app-wrapper">      
-      <div className={`app-content ${showRegistro ? "blur-background" : ""}`}>
+    <div className="app-wrapper">
+  <div className={`app-content ${showRegistro || showLogin ? 'blur-background' : ''}`}>
+
         <header>
-          <Menu setShowRegistro={setShowRegistro} />
+          <Menu setShowRegistro={setShowRegistro} setShowLogin={setShowLogin} />
           <Title />
           <Logo />
         </header>
@@ -51,15 +54,9 @@ const App = () => {
           ))}
         </div>
       </div>
-      {showRegistro && (
-        <div className="registro-overlay">
-          <Registro
-            showRegistro={showRegistro}
-            setShowRegistro={setShowRegistro}
-          />
-          <Logo />
-        </div>
-      )}
+
+      {showRegistro && <Registro setShowRegistro={setShowRegistro} />}
+      {showLogin && <Login setShowLogin={setShowLogin} />}
     </div>
   );
 };

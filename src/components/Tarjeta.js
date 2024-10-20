@@ -15,4 +15,6 @@ const Tarjeta = ({ title, description, imageUrl }) => {
     );
 };
 
+
+
 export default Tarjeta;

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import './Menu.css'; // Importación del CSS del menú
 
-const Menu = ({ setShowRegistro }) => {
+const Menu = ({ setShowRegistro, setShowLogin }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   // Función para alternar el menú
@@ -13,6 +13,13 @@ const Menu = ({ setShowRegistro }) => {
   // Función para manejar el click en el botón de registro
   const handleRegistroClick = () => {
     setShowRegistro(true);
+    setIsOpen(false);  // Cierra el menú después de hacer clic
+  };
+
+  // Función para manejar el click en el botón de login
+  const handleLoginClick = () => {
+    setShowLogin(true);
+    setIsOpen(false);  // Cierra el menú después de hacer clic
   };
 
   // Variants para la animación del menú desplegable
@@ -61,7 +68,7 @@ const Menu = ({ setShowRegistro }) => {
       >
         <ul className="menu-items">
           <li><a href="#" onClick={handleRegistroClick}>Registro</a></li>
-          <li><a href="#">Inicio de Sesión</a></li>
+          <li><a href="#" onClick={handleLoginClick}>Iniciar Sesión</a></li>
           <li><a href="#">Carrito</a></li>
         </ul>
       </motion.nav>
