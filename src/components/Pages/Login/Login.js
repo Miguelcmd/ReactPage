@@ -27,7 +27,7 @@ const Login = ({ showLogin, setShowLogin }) => {
           <label htmlFor="login-password">Contraseña:</label>
           <input type="password" id="login-password" placeholder="Ingresa tu contraseña" required />
         </div>
-        <button type="submit" className="submit-button">Iniciar sesión</button>
+        <button type="submit" className="btn btn-outline-dark"gvf >Iniciar sesión</button>
       </form>
     </motion.div>
   );

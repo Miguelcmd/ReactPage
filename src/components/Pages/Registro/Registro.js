@@ -31,7 +31,7 @@ const Registro = ({ showRegistro, setShowRegistro }) => {
           <label htmlFor="confirm-password">Confirmar contraseña:</label>
           <input type="password" id="confirm-password" placeholder="Confirma tu contraseña" required />
         </div>
-        <button type="submit" className="submit-button">Registrarse</button>
+        <button type="submit" className="btn btn-outline-dark">Registrarse</button>
       </form>
     </motion.div>
   );

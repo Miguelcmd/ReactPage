@@ -1,10 +1,14 @@
 .login-container {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    width: 400px;
-    position: relative;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  position: fixed;
+  top:15vh;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
   }
   
   .close-button {
