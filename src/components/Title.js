@@ -39,6 +39,7 @@ const Title = () => {
       >
         {domains[currentDomainIndex]} {/* Mostrar el dominio actual */}
       </motion.span>
+      
     </div>
   );
 };

@@ -1,7 +1,8 @@
-.tarjetas-container {
-    padding: 5px;
+.tarjetas-container {   
+    padding: 2px;
     text-align: center; /* Centra el contenido */
-    border: 2px solid #000000;
+    
+    
     
 }
 
@@ -9,7 +10,8 @@
     display: flex;
     justify-content: center; /* Centra las tarjetas horizontalmente */
     flex-wrap: wrap; /* Permite que las tarjetas se envuelvan en varias filas */ 
-    margin: 40px auto 40px auto;   
+    margin: 80px auto 40px auto;
+    
 }
 
 .card {

@@ -1,40 +1,37 @@
-.circle-container {
-  position: fixed; /* Cambiar a fixed para que permanezca en la pantalla */
-  bottom: 1px; /* Distancia desde la parte inferior de la pantalla */
-  right: 25px; /* Distancia desde el lado derecho de la pantalla */
-  width: 200px; /* Ajusta según sea necesario */
-  height: 250px; /* Ajusta según sea necesario */
+.circle-container {  
   display: flex;
   justify-content: center;
-  align-items: center;
-  border: none;
+  align-items: center;  
+  position: relative; 
+  left: 8%;
+  top: 68px;
+  width: 30px; 
+  height: 30px;  
+  border: 2px solid black;
+  z-index: 20;
 }
 
 .text-container {
-  position: absolute; /* Mantén la posición absoluta */
-  width: 100%; /* Tomar todo el ancho del contenedor */
-  height: 100%; /* Tomar todo el alto del contenedor */
-  transform: translate(
-    -50%,
-    -50%
-  ); /* Asegura que el contenedor esté centrado */
-  border: none;
+  position: absolute; 
+  width: 100%; 
+  height: 100%;  
+  z-index: 20;
 }
 
 .center-logo {
-  position: absolute;
+  position: static;
   width: 115px;
-  height: 115px;
-  z-index: 1;
+  height: 115px;  
   border: none;
   border-radius: 500px;
   background: rgb(227, 233, 197);
+  z-index: 20;
 }
 
 .text {
   position: absolute;
-  font-size: 18px; /* Ajusta el tamaño de la fuente según tu necesidad */
-  transform-origin: 0 0; /* Cambia el origen de la transformación */
-  z-index: 0; /* Asegúrate de que las letras estén debajo del logo */
-  white-space: nowrap; /* Evita que las letras se apilen */
+  font-size: 18px; 
+  transform-origin: 0 0;   
+  white-space: nowrap; 
+  z-index: 20;
 }

@@ -14,12 +14,11 @@ const Logo = () => {
             setRotation(prev => prev + 1); // Incrementa la rotación
         }, 60); // Velocidad de rotación
 
-        return () => clearInterval(interval); // Limpia el intervalo al desmontar
+        return () => clearInterval(interval); 
     }, []);
 
     return (
-        <div className="circle-container">
-            {/* Imagen SVG o PNG en el centro del círculo */}
+        <div className="circle-container">            
             <img src='/logo.png' alt="Logo central" className="center-logo" />
             
             <div className="text-container" style={{ transform: `rotate(${rotation}deg)` }}>

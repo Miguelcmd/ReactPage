@@ -39,9 +39,10 @@ const App = () => {
   <div className={`app-content ${showRegistro || showLogin ? 'blur-background' : ''}`}>
 
         <header>
+          <Logo />
           <Menu setShowRegistro={setShowRegistro} setShowLogin={setShowLogin} />
           <Title />
-          <Logo />
+          
         </header>
         <div className="tarjetas-grid">
           {tarjetas.map((tarjeta, index) => (
