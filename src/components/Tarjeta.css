@@ -1,21 +1,18 @@
 .tarjetas-container {   
     padding: 2px;
-    text-align: center; /* Centra el contenido */
-    
-    
-    
+    text-align: center;     
 }
 
 .tarjetas-grid {
     display: flex;
-    justify-content: center; /* Centra las tarjetas horizontalmente */
-    flex-wrap: wrap; /* Permite que las tarjetas se envuelvan en varias filas */ 
+    justify-content: center; 
+    flex-wrap: wrap; 
     margin: 80px auto 40px auto;
     
 }
 
 .card {
-    margin: 1%; /* Espacio entre tarjetas */
+    margin: 1%; 
     border: 2px solid #000000;
 }
 .card:hover {
@@ -27,22 +24,49 @@
     -o-transform: scale(1.4) rotate(1deg) translate(0px, 9px) skew(-1deg, 1deg);
     -ms-transform: scale(1.4) rotate(1deg) translate(0px, 9px) skew(-1deg, 1deg);
      transform: scale(1.04) rotate(0.3deg) translate(0px, 9px) skew(-1deg, 1deg);
-}
-    
+}    
 
 .image-container {
-    width: 270px; /* Ajusta el tamaño del contenedor de la imagen */
-    height: 200px; /* Ajusta la altura también */
+    width: 270px; 
+    height: 200px; 
     overflow: hidden;
-    margin: 10px auto 1px auto; /* Centrar el contenedor dentro de la tarjeta */
+    margin: 10px auto 1px auto; 
     
-    border-radius: 2%; /* Hacer el contenedor redondo */
-    border: 2px solid #080808; /* Borde opcional */
+    border-radius: 2%; 
+    border: 2px s
 }
 
 /* Imagen dentro del contenedor */
 .image-container img {
-    width: 100%; /* Asegura que la imagen ocupe todo el contenedor */
-    height:auto; /* Mantiene la proporción de la imagen */
+    width: 100%; 
+    height:auto; 
     display: block;
 }
+
+#btn-detalle {
+    margin-top: 10px;
+  }
+  
+  .full-viewport {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  .blank-design {
+    font-size: 24px;
+    color: #000000;
+  }
+
+  .logoB-fullview {
+ 
+  }
+
+  

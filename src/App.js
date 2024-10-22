@@ -6,6 +6,7 @@ import Title from "./components/Title";
 import Registro from "./components/Pages/Registro/Registro";
 import Logo from "./components/Pages/Logo/Logo";
 import Login from "./components/Pages/Login/Login";
+import LogoB from "./components/Pages/LogoB/LogoB";
 
 const App = () => {
   const [showRegistro, setShowRegistro] = useState(false);

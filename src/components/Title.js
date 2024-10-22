@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import './Title.css';
 
-const domains = ['.com', '.net', '.org', '.info', '.co']; // Lista de dominios
+const domains = ['.com', '.net', '.org', '.info', '.co','.edu','.gov','.biz','.app','.space','.design','.store','.tech','.ai']; // Lista de dominios
 
 const Title = () => {
   const [currentDomainIndex, setCurrentDomainIndex] = useState(0);
@@ -16,7 +16,7 @@ const Title = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentDomainIndex((prev) => (prev + 1) % domains.length); // Cicla a través de los dominios
-    }, 2000); // Cambia cada 2 segundos
+    }, 3000); // Cambia cada 2 segundos
 
     return () => clearInterval(interval); // Limpiar intervalo al desmontar
   }, []);
