@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import "./App.css";
 import LandingPage from "./components/Sections/LandingPage/LandingPage";
-import NewSection from "./components/Sections/Hoteles/Hoteles";
+import Hoteles from "./components/Sections/Hoteles/Hoteles";
 
 const App = () => {
   const [showRegistro, setShowRegistro] = useState(false);
@@ -22,7 +22,7 @@ const App = () => {
             />
           }
         />
-        <Route path="/Hoteles" element={<NewSection />} />
+        <Route path="/hoteles" element={< Hoteles />} />
       </Routes>
     </Router>
   );

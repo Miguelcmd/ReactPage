@@ -1,12 +1,22 @@
 import React,{useState} from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import "./Tarjeta.css";
 import LogoB from"./Pages/LogoB/LogoB"
-const Tarjeta = ({ title, description, imageUrl }) => {
+
+const Tarjeta = ({ title, description, imageUrl,route }) => {
   const [isAnimating, setIsAnimating] = useState(false);
 
+  
+
+  const navigate = useNavigate();
+
   const handleClick = () => {
-    setIsAnimating(true);
+    if (route) {
+      navigate(route);  // Navegar a la ruta pasada como prop
+    } else {
+      setIsAnimating(true);  // O animación si no hay ruta
+    }
   };
 
   const transitionEffect = {
