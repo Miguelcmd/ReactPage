@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import "./LogoB.css";
-import { speed } from 'jquery';
 
 const Logo = () => {
     const text = '-PepeKick-Technologies'.split('');
