@@ -6,6 +6,7 @@ import Title from "../../Title";
 import Registro from "../../Pages/Registro/Registro";
 import Logo from "../../Pages/Logo/Logo";
 import Login from "../../Pages/Login/Login";
+import "../../Tarjeta.css"
 
 const LandingPage = ({ showRegistro, setShowRegistro, showLogin, setShowLogin }) => {
   const navigate = useNavigate();  // Definir navigate para la navegación

@@ -1,3 +1,8 @@
+.app-wrapper {
+    
+    background-color: #696564;
+    height: 100vh;
+}
 .tarjetas-container {   
     padding: 2px;
     text-align: center;     

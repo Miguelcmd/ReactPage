@@ -9,44 +9,52 @@ const transitionEffect = {
 };
 
 const Hoteles = () => {
-  // Definir un estado para controlar si la animación está activa
   const [isAnimating, setIsAnimating] = useState(false);
 
-  // Usar useEffect para iniciar la animación cuando el componente se monta
   useEffect(() => {
-    setIsAnimating(true); // Iniciar la animación al montar el componente
-  }, []); // El array vacío [] asegura que esto se ejecute solo una vez al montar
+    setIsAnimating(true);
+  }, []);
+
+  const getTestimonialText = (index) => {
+    const testimonials = [
+      'La experiencia fue increíble, el servicio al cliente es de primera.',
+      'Me encantó la vista desde la habitación, realmente vale la pena.',
+      'Un lugar perfecto para relajarse, 100% recomendado.',
+      'Todo fue excelente, desde la comida hasta las instalaciones.'
+    ];
+    return testimonials[index];
+  };
 
   return (
     <>
-      <section className="Back-section">
-        <section className="hoteles-section">
-          <div className="hoteles-grid-container">
-            <div className="hoteles-image-container">
-              <img src="hotel.jpg" alt="Imagen del hotel" />
-            </div>
-            <div className="hoteles-content-container">
-              <span className="hoteles-supertitle">Ofertas Exclusivas</span>
-              <h1>Hotel de Lujo en la Ciudad</h1>
-              <p>
-                Disfruta de una estadía inolvidable en nuestro hotel con todas
-                las comodidades que necesitas para relajarte y disfrutar.
-              </p>
-              <div className="hoteles-button-group">
-                <button className="hoteles-btn hoteles-primary">
-                  Reservar Ahora
-                </button>
-                <button className="hoteles-btn hoteles-secondary">
-                  Ver más
-                </button>
-                <button className="hoteles-btn hoteles-tertiary">
-                  Contáctanos
-                </button>
-              </div>
+       <div className="hotel-section">
+      <div className="hotel-header">
+        <img 
+          src="https://via.placeholder.com/200" 
+          alt="Hotel Sign" 
+          className="hotel-header-image" 
+        />
+        <h1>Explora Nuestras Habitaciones</h1>
+        <p>Ofrecemos una variedad de habitaciones que se adaptan a todas tus necesidades, desde suites de lujo hasta opciones más económicas.</p>
+        <button className="hotel-btn">Reservar</button>
+      </div>
+
+      <div className="masonry-grid">
+        {['Cita 1', 'Cita 2', 'Cita 3', 'Cita 4'].map((title, index) => (
+          <div className="masonry-item" key={index}>
+            <img 
+              src={`https://via.placeholder.com/150`} 
+              alt={title} 
+              className="masonry-image" 
+            />
+            <div className="masonry-text">
+              <h3>{title}</h3>
+              <p>{getTestimonialText(index)}</p>
             </div>
           </div>
-        </section>
-      </section>
+        ))}
+      </div>
+    </div>
 
       <AnimatePresence>
         {isAnimating && (
@@ -66,6 +74,8 @@ const Hoteles = () => {
           </motion.div>
         )}
       </AnimatePresence>
+
+
     </>
   );
 };
