@@ -48,7 +48,7 @@ const Title = () => {
         initial="hidden"
         animate="visible"
       >
-        Reservas
+        Reserva
       </motion.h1>
       <motion.span
         className="app-dot-com"

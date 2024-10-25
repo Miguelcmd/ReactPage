@@ -2,12 +2,13 @@
 .title-container {
   position: relative; /* Permite superposición */
     display: flex;
-    flex-direction: column; /* Coloca "Reservas" y el dominio en columna */
-    align-items:flex-start; /* Centra horizontalmente */
+    flex-direction: row; /* Coloca "Reservas" y el dominio en columna */
+    align-items:flex-end; /* Centra horizontalmente */
     top: 0px;
     left: 30%;
-    width: 300px;    
-    transition: top 0.3s ease-in-out;
+    width: 300px;  
+    gap: 20px;  
+    
     
   }
   
@@ -15,8 +16,9 @@
     font-family: 'Montserrat', sans-serif; /* Usar la fuente Montserrat */
     font-size: 6rem; /* Tamaño del texto */
     color: #ff6200; /* Color del texto */
-    margin: 0; /* Quitar márgenes */
-        
+    
+    
+            
   }
   
   .app-dot-com {
