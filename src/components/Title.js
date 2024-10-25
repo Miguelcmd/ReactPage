@@ -3,11 +3,10 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import './Title.css';
 
-const domains = ['Hoteles','Vuelos','Transporte','Restaurantes']; // Lista de dominios
+const domains = ['Hoteles', 'Vuelos', 'Transporte', 'Restaurantes'];
 
 const Title = () => {
   const [currentDomainIndex, setCurrentDomainIndex] = useState(0);
-  const [topPosition, setTopPosition] = useState(130);
 
   const titleVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -15,33 +14,15 @@ const Title = () => {
   };
 
   useEffect(() => {
-    
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-
-      if (scrollPosition > 0) {
-        // Si el scroll es mayor a 126px, fijar a 4px
-        setTopPosition(1);
-      } else {
-        // Ajustar gradualmente la posición entre 130px y 4px
-        const newTop = 1 - scrollPosition;
-        setTopPosition(newTop);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    
-
     const interval = setInterval(() => {
-      setCurrentDomainIndex((prev) => (prev + 1) % domains.length); // Cicla a través de los dominios
-    }, 3000); // Cambia cada 2 segundos
+      setCurrentDomainIndex((prev) => (prev + 1) % domains.length);
+    }, 3000);
 
-    return () => clearInterval(interval); window.removeEventListener('scroll', handleScroll);  // Limpiar intervalo al desmontar
+    return () => clearInterval(interval); // Limpiar intervalo al desmontar
   }, []);
 
   return (
-    <div className="title-container" style={{ top: `${topPosition}px` }}>
+    <div className="title-container">
       <motion.h1
         className="app-title"
         variants={titleVariants}
@@ -56,9 +37,8 @@ const Title = () => {
         initial="hidden"
         animate="visible"
       >
-        {domains[currentDomainIndex]} {/* Mostrar el dominio actual */}
+        {domains[currentDomainIndex]}
       </motion.span>
-      
     </div>
   );
 };

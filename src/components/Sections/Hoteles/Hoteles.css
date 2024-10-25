@@ -1,8 +1,6 @@
 
 /* General Styles */
 .hotel-section {
-  
-  
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,7 +9,6 @@
   background-color: #1a1a1a;
   color: #f0f0f0;
 }
-
 /* Header Styles */
 .hotel-header {
   text-align: center;
@@ -82,6 +79,7 @@
   width: 100%;
   height: auto;
   object-fit: cover; /* Asegura que las imágenes se ajusten al contenedor */
+  border-top: 3px solid #ff6200;
   border-radius: 8px;
 }
 

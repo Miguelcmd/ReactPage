@@ -3,9 +3,9 @@
   position: relative; /* Permite superposición */
     display: flex;
     flex-direction: row; /* Coloca "Reservas" y el dominio en columna */
-    align-items:flex-end; /* Centra horizontalmente */
-    top: 0px;
-    left: 30%;
+    align-items:flex-start; /* Centra horizontalmente */
+    top: 20px;
+    left: 28%;
     width: 300px;    
     
     
@@ -15,7 +15,7 @@
     font-family: 'Montserrat', sans-serif; /* Usar la fuente Montserrat */
     font-size: 6rem; /* Tamaño del texto */
     color: #ff6200; /* Color del texto */
-    margin: 9; /* Quitar márgenes */
+    margin: 20; /* Quitar márgenes */
     padding: 6px;
     gap: 5px;
         
@@ -25,7 +25,7 @@
     font-family: 'Montserrat', sans-serif; /* Usar la fuente Montserrat */
     font-size: 3rem; /* Mismo tamaño que el título */
     color: #f3f1f1; /* Color del texto */
-      
+    
     
   }
 
