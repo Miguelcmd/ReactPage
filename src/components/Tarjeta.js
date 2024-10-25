@@ -10,17 +10,16 @@ const Tarjeta = ({ title, description, imageUrl, route }) => {
 
   const handleClick = () => {
     setIsAnimating(true); // Iniciar la animación
-
-    // Esperar un poco para que la animación inicie, luego navegar
-    setTimeout(() => {
-      navigate(route); // Navegar a la ruta
-    }, 800); // Ajusta este tiempo en ms al tiempo de la animación (800ms coincide con el duration de la animación)
+  };
+  
+  const handleAnimationComplete = () => {
+    navigate(route); // Navegar a la ruta después de la animación
   };
 
   const transitionEffect = {
     hidden: { x: "-100vw", opacity: 0 },
     visible: { x: 0, opacity: 1, transition: { duration: 0.8 } },
-    exit: { x: "100vw", opacity: 1, transition: { duration: 0.8, delay: 1 } },
+    exit: { x: "100vw", opacity: 1, transition: { duration: 0.8, delay: 0.4 } },
   };
 
   return (
@@ -54,8 +53,7 @@ const Tarjeta = ({ title, description, imageUrl, route }) => {
             animate="visible"
             exit="exit"
             variants={transitionEffect}
-            onAnimationComplete={() => setIsAnimating(false)}
-          >
+            onAnimationComplete={handleAnimationComplete}          >
             <div className="blank-design">
               <h1>
                 <LogoB className="logo-fullview" />
