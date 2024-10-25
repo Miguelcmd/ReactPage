@@ -21,10 +21,10 @@ const Title = () => {
 
       if (scrollPosition > 0) {
         // Si el scroll es mayor a 126px, fijar a 4px
-        setTopPosition(0);
+        setTopPosition(1);
       } else {
         // Ajustar gradualmente la posición entre 130px y 4px
-        const newTop = 0 - scrollPosition;
+        const newTop = 1 - scrollPosition;
         setTopPosition(newTop);
       }
     };

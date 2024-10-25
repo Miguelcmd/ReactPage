@@ -25,36 +25,44 @@ const Hoteles = () => {
     return testimonials[index];
   };
 
+  const imageUrls = [
+    "/image1.jpg",
+    "/image2.jpg",
+    "/image3.webp",
+    "/image4.png",
+   
+  ];
+
   return (
     <>
-       <div className="hotel-section">
-      <div className="hotel-header">
-        <img 
-          src="/pillow.png" 
-          alt="Hotel Sign" 
-          className="hotel-header-image" 
-        />
-        <h1>Explora Nuestras Habitaciones</h1>
-        <p>Ofrecemos una variedad de habitaciones que se adaptan a todas tus necesidades, desde suites de lujo hasta opciones más económicas.</p>
-        <button className="hotel-btn">Reservar</button>
-      </div>
+      <div className="hotel-section">
+        <div className="hotel-header">
+          <img 
+            src="/pillow.png" 
+            alt="Hotel Sign" 
+            className="hotel-header-image" 
+          />
+          <h1>Explora Nuestras Habitaciones</h1>
+          <p>Ofrecemos una variedad de habitaciones que se adaptan a todas tus necesidades, desde suites de lujo hasta opciones más económicas.</p>
+          <button className="hotel-btn">Reservar</button>
+        </div>
 
-      <div className="masonry-grid">
-        {['Cita 1', 'Cita 2', 'Cita 3', 'Cita 4'].map((title, index) => (
-          <div className="masonry-item" key={index}>
-            <img 
-              src={`https://via.placeholder.com/150`} 
-              alt={title} 
-              className="masonry-image" 
-            />
-            <div className="masonry-text">
-              <h3>{title}</h3>
-              <p>{getTestimonialText(index)}</p>
+        <div className="masonry-grid">
+          {['Cita 1', 'Cita 2', 'Cita 3', 'Cita 4'].map((title, index) => (
+            <div className="masonry-item" key={index}>
+              <img 
+                src={imageUrls[index]} 
+                alt={title} 
+                className="masonry-image" 
+              />
+              <div className="masonry-text">
+                <h3>{title}</h3>
+                <p>{getTestimonialText(index)}</p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
 
       <AnimatePresence>
         {isAnimating && (
@@ -74,8 +82,6 @@ const Hoteles = () => {
           </motion.div>
         )}
       </AnimatePresence>
-
-
     </>
   );
 };
