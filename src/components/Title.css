@@ -4,8 +4,8 @@
     display: flex;
     flex-direction: column; /* Coloca "Reservas" y el dominio en columna */
     align-items:flex-start; /* Centra horizontalmente */
-    top: 50px;
-    left: 40%;
+    top: 0px;
+    left: 30%;
     width: 300px;    
     transition: top 0.3s ease-in-out;
     
@@ -13,7 +13,7 @@
   
   .app-title {
     font-family: 'Montserrat', sans-serif; /* Usar la fuente Montserrat */
-    font-size: 2.5rem; /* Tamaño del texto */
+    font-size: 6rem; /* Tamaño del texto */
     color: #ff6200; /* Color del texto */
     margin: 0; /* Quitar márgenes */
         
@@ -21,19 +21,20 @@
   
   .app-dot-com {
     font-family: 'Montserrat', sans-serif; /* Usar la fuente Montserrat */
-    font-size: 2.5rem; /* Mismo tamaño que el título */
+    font-size: 3rem; /* Mismo tamaño que el título */
     color: #f3f1f1; /* Color del texto */
       
     
   }
 
   
-  @media (max-width: 500px) {
+  @media (max-width: 700px) {
 
     .title-container {
       position: fixed;     
-      align-items: flex-start; /* Centra horizontalmente */
-      left: 34px;
+      align-items: start; /* Centra horizontalmente */
+      padding-left: 30px;
+      left: 0px;
       width: 100%;
       top:0px;
       z-index: 20;
