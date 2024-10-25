@@ -10,12 +10,12 @@
     justify-content: center;
     align-items: center;
     box-shadow: -2px 0 10px rgba(0, 0, 0, 0);
-    z-index: 10;
+    z-index: 21;
   }
   
   .menu-items {
     list-style: none;
-    padding: 5px;
+    padding: 2px;
     text-align: center;
     display: flex;
     flex-direction: row;
@@ -27,8 +27,9 @@
   }
   
   .menu-items a {
+    position: absolute;
     text-decoration: none;
-    color: black;
+    color: rgb(255, 255, 255);
     font-size: 1.3rem;
     transition: color 0.3s ease;
   }
@@ -36,7 +37,7 @@
   
   .menu-items li a {
     text-decoration: none;
-    color: black;
+    color: #ffffff;
     position: relative;  /* Necesario para posicionar el ::after */
   }
   
@@ -45,7 +46,7 @@
     position: absolute;
     width: 0; /* Línea inicialmente invisible */
     height: 2px;
-    background-color: rgb(0, 0, 0);  /* Color de la línea */
+    background-color: #ff6200;  /* Color de la línea */
     right: 0;  /* Comienza desde el borde derecho */
     bottom: -3px;  /* Colocamos la línea justo debajo del texto */
     transition: width 0.4s ease, right 0.4s ease;  /* Animación suave */
@@ -58,7 +59,7 @@
   
   /* Estilos para el ícono de hamburguesa */
   .hamburger {
-    position: absolute;
+    position: fixed;
     top: 42px;
     right: 40px;
     width: 30px;
@@ -67,32 +68,41 @@
     flex-direction: column;
     justify-content: space-between;
     cursor: pointer;
-    z-index: 20;
+    z-index: 30;
+    
   }
   
   .line {
     width: 100%;
     height: 3px;
-    background-color: black;
+    background-color: #ff6200;
   }
 
-  @media (max-width: 768px)  {
+  @media (max-width: 600px)  {
     .menu-items {
       position: fixed;
-      top: 10px;
-      right: 60px;
+      top: 175px;
+      right: 1px;
       list-style: none;
-      padding: 1px;
+      padding: 0px;
       text-align: end;
       display: flex;
-      flex-direction: column;
+      flex-direction:row;
       justify-content:flex-end;
-      background-color: rgba(255, 255, 255, 0.74);
+      background-color: rgba(255, 255, 255, 0);
       border-radius: 8px;
-      border: 2px solid black;
+      border: 2px solid rgba(0, 0, 0, 0);
       opacity: 1;
-      transform: translateX(5em,20em);
+      transform: translateX(1em,20em);
       transition: all 0.5s ease-in-out; /* Añade transición suave */
+
+      .menu-items a {
+        position:absolute;
+        text-decoration: none;
+        color: #ff0000;
+        font-size: 1.3rem;
+        transition: color 0.3s ease;
+      }
       
     }
   }

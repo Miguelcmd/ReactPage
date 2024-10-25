@@ -39,6 +39,7 @@ const Tarjeta = ({ title, description, imageUrl, route }) => {
             onClick={handleClick}
             id="btn-detalle"
             className="btn btn-outline-dark"
+            aria-label={`Ver detalles de ${title}`}
           >
             Detalle
           </button>

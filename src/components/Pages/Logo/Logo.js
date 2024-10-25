@@ -3,7 +3,7 @@ import './Logo.css';
 
 const Logo = () => {
     const text = '-PepeKick-Technologies'.split('');
-    const radius = 83; // Radio del círculo
+    const radius = 100; // Radio del círculo
     const letterSpacing = 360 / text.length; // Separación angular entre letras
 
     // State para controlar la rotación

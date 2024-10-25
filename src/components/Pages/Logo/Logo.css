@@ -2,9 +2,9 @@
   display: flex;
   justify-content: center;
   align-items: center;  
-  position: relative; 
-  left: 8%;
-  top: 68px;
+  position:relative; 
+  left: 98px;
+  top: 135px;
   width: 30px; 
   height: 30px;  
   border: 2px solid black;
@@ -31,7 +31,24 @@
 .text {
   position: absolute;
   font-size: 18px; 
+  color:#ffffff;
   transform-origin: 0 0;   
   white-space: nowrap; 
   z-index: 20;
+}
+
+@media (max-width: 500px) {
+  .circle-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    position:relative; 
+    left: 160px;
+    top: 68px;
+    width: 30px; 
+    height: 30px;  
+    border: 2px solid black;
+    z-index: 20;
+  }
+ 
 }

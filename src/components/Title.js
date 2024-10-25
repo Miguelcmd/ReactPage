@@ -7,22 +7,41 @@ const domains = ['.com', '.net', '.org', '.info', '.co','.edu','.gov','.biz','.a
 
 const Title = () => {
   const [currentDomainIndex, setCurrentDomainIndex] = useState(0);
+  const [topPosition, setTopPosition] = useState(130);
 
   const titleVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.9 } },
   };
 
   useEffect(() => {
+    
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+
+      if (scrollPosition > 126) {
+        // Si el scroll es mayor a 126px, fijar a 4px
+        setTopPosition(0);
+      } else {
+        // Ajustar gradualmente la posición entre 130px y 4px
+        const newTop = 190 - scrollPosition;
+        setTopPosition(newTop);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    
+
     const interval = setInterval(() => {
       setCurrentDomainIndex((prev) => (prev + 1) % domains.length); // Cicla a través de los dominios
     }, 3000); // Cambia cada 2 segundos
 
-    return () => clearInterval(interval); // Limpiar intervalo al desmontar
+    return () => clearInterval(interval); window.removeEventListener('scroll', handleScroll);  // Limpiar intervalo al desmontar
   }, []);
 
   return (
-    <div className="title-container">
+    <div className="title-container" style={{ top: `${topPosition}px` }}>
       <motion.h1
         className="app-title"
         variants={titleVariants}

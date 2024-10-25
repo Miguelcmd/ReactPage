@@ -1,7 +1,8 @@
 .app-wrapper {
-    
-    background-color: #696564;
-    height: 100vh;
+    position: absolute;
+    background-color: #1f1f1f;
+    height: 100%;
+    width: 100%;
 }
 .tarjetas-container {   
     padding: 2px;
@@ -12,13 +13,13 @@
     display: flex;
     justify-content: center; 
     flex-wrap: wrap; 
-    margin: 80px auto 40px auto;
+    margin: 150px auto 40px auto;
     
 }
 
 .card {
     margin: 1%; 
-    border: 2px solid #000000;
+    border: 3px solid #ffffff;
 }
 .card:hover {
     transform: scale(1.05);
@@ -70,4 +71,18 @@
     color: #000000;
   }
 
-   
+  @media (max-width: 900px) {
+    .app-wrapper{
+    position: relative;
+    display: flex;
+    height: 100%;
+  }
+
+  .tarjetas-grid {
+    display: flex;
+    justify-content: center; 
+    flex-wrap: wrap; 
+    margin: 240px auto 40px auto;
+    
+}
+}

@@ -1,30 +1,46 @@
 /* components/Title.css */
 .title-container {
+  position: relative; /* Permite superposición */
     display: flex;
     flex-direction: row; /* Coloca "Reservas" y el dominio en columna */
     align-items: center; /* Centra horizontalmente */
-    position: relative; /* Permite superposición */
-    left: 23%;
+    left: 40%;
     width: 300px;
-    top: 25px;
-    
+    top: 100px;
+    transition: top 0.3s ease-in-out;
     
   }
   
   .app-title {
     font-family: 'Montserrat', sans-serif; /* Usar la fuente Montserrat */
     font-size: 2.5rem; /* Tamaño del texto */
-    color: #333; /* Color del texto */
+    color: #ff6200; /* Color del texto */
     margin: 0; /* Quitar márgenes */
-    position: relative;    
-    
+        
   }
   
   .app-dot-com {
     font-family: 'Montserrat', sans-serif; /* Usar la fuente Montserrat */
     font-size: 2.5rem; /* Mismo tamaño que el título */
-    color: #333; /* Color del texto */
-    position: relative; /* Permite que el dominio se superponga */   
+    color: #f3f1f1; /* Color del texto */
+      
     
+  }
+
+  
+  @media (max-width: 500px) {
+
+    .title-container {
+      position: fixed;     
+      align-items: center; /* Centra horizontalmente */
+      left: 14px;
+      width: 100%;
+      top:0px;
+      z-index: 20;
+      background-color: #1f1f1f
+      
+      
+    }
+
   }
   
