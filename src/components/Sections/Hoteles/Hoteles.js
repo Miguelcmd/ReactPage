@@ -30,7 +30,7 @@ const Hoteles = () => {
        <div className="hotel-section">
       <div className="hotel-header">
         <img 
-          src="https://via.placeholder.com/200" 
+          src="/pillow.png" 
           alt="Hotel Sign" 
           className="hotel-header-image" 
         />

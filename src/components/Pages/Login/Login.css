@@ -40,3 +40,20 @@
     cursor: pointer;
   }
   
+
+  @media (max-width: 600px)  {
+    .login-container {
+      background-color: white;
+      
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      width: 300px;
+      position: fixed;
+      top:15vh;
+      
+      left: 4px;
+      right: 0;
+      }
+      
+
+  }

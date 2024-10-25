@@ -37,7 +37,7 @@
     height: 200px; 
     overflow: hidden;
     margin: 10px auto 1px auto; 
-    
+    background: rgb(255, 123, 0);
     border-radius: 2%; 
     border: 2px s
 }
@@ -82,7 +82,7 @@
     display: flex;
     justify-content: center; 
     flex-wrap: wrap; 
-    margin: 240px auto 40px auto;
+    margin: 290px auto 40px auto;
     
 }
 }

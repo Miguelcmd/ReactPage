@@ -1,7 +1,7 @@
 /* Estilos para el menú desplegable */
 .menu {
     position: fixed;
-    top: 40px;
+    top: 35px;
     right: 30px;
     width: 500px;
     height: 40px;
@@ -81,29 +81,35 @@
   @media (max-width: 600px)  {
     .menu-items {
       position: fixed;
-      top: 175px;
+      top: 30px;
       right: 1px;
       list-style: none;
       padding: 0px;
       text-align: end;
       display: flex;
-      flex-direction:row;
+      flex-direction:column;
       justify-content:flex-end;
-      background-color: rgba(255, 255, 255, 0);
+      background-color: #1f1f1f62;
       border-radius: 8px;
       border: 2px solid rgba(0, 0, 0, 0);
       opacity: 1;
       transform: translateX(1em,20em);
       transition: all 0.5s ease-in-out; /* Añade transición suave */
 
-      .menu-items a {
-        position:absolute;
-        text-decoration: none;
-        color: #ff0000;
-        font-size: 1.3rem;
-        transition: color 0.3s ease;
-      }
-      
+     
     }
+    .hamburger {
+      position: fixed;
+      top: 20px;
+      right: 40px;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      z-index: 30;
+    
   }
+}
   

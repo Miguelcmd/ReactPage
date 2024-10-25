@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import './Title.css';
 
-const domains = ['.com', '.net', '.org', '.info', '.co','.edu','.gov','.biz','.app','.space','.design','.store','.tech','.ai']; // Lista de dominios
+const domains = ['Hoteles','Vuelos','Transporte','Restaurantes']; // Lista de dominios
 
 const Title = () => {
   const [currentDomainIndex, setCurrentDomainIndex] = useState(0);
@@ -24,7 +24,7 @@ const Title = () => {
         setTopPosition(0);
       } else {
         // Ajustar gradualmente la posición entre 130px y 4px
-        const newTop = 190 - scrollPosition;
+        const newTop = 200 - scrollPosition;
         setTopPosition(newTop);
       }
     };

@@ -13,7 +13,7 @@ const LandingPage = ({ showRegistro, setShowRegistro, showLogin, setShowLogin })
   const [isAnimating, setIsAnimating] = useState(false);  // Estado para la animación
 
   const tarjetas = [
-    { title: "Título 1", description: "Descripción breve de la tarjeta 1.", imageUrl: "https://via.placeholder.com/270x160", route: "/hoteles" },
+    { title: "Título 1", description: "Descripción breve de la tarjeta 1.", imageUrl: "/Pillow.png", route: "/hoteles" },
     { title: "Título 2", description: "Descripción breve de la tarjeta 2.", imageUrl: "https://via.placeholder.com/270x160" },
     { title: "Título 3", description: "Descripción breve de la tarjeta 3.", imageUrl: "https://via.placeholder.com/270x160" },
     { title: "Título 4", description: "Descripción breve de la tarjeta 4.", imageUrl: "https://via.placeholder.com/270x160" },

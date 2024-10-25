@@ -16,11 +16,11 @@
 
 .close-button {
   position: absolute;
-  top: 10px;
+  top: 30px;
   right: 10px;
   background: transparent;
   border: none;
-  font-size: 18px;
+  font-size: 40px;
   cursor: pointer;
 }
 
@@ -41,4 +41,19 @@
   color: white;
   border: none;
   cursor: pointer;
+}
+
+@media (max-width: 600px)  {
+  .registro-container {
+    background-color: white;    
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    position: fixed;
+    top: 8vh;
+    margin: 40px 30px;
+    left: 0;
+    right: 0;
+    border: solid 2px black;
+}
 }
