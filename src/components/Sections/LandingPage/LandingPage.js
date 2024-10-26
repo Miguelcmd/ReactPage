@@ -15,8 +15,8 @@ const LandingPage = ({ showRegistro, setShowRegistro, showLogin, setShowLogin })
   const tarjetas = [
     { title: "Hospedaje", description: "Encuentra un lugar ideal para descansar", imageUrl: "/Pillow.png", route: "/hoteles" },
     { title: "Vuelos", description: "Viaja comodo a tu lugar de destino", imageUrl: "/avion.png",  route: "/vuelos" },
-    { title: "Transporte", description: "Trasladate por la ciudad como prefieras", imageUrl: "https://via.placeholder.com/270x160" },
-    { title: "Restaurantes", description: "Encuentra un lugar para comer cerca de donde estes", imageUrl: "https://via.placeholder.com/270x160" },
+    { title: "Transporte", description: "Trasladate por la ciudad como prefieras", imageUrl: "/casco.jpg", route: "/transportes" },
+    { title: "Restaurantes", description: "Encuentra un lugar para comer cerca de donde estes", imageUrl: "/Restaurantes.jpg", route: "/restaurantes" },
   ];
 
   const handleClick = (route) => {

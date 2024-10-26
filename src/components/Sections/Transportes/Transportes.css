@@ -1,0 +1,65 @@
+.transporte-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color:   #1f1f1f;  
+
+  }
+  
+  h1 {
+    color: #ff8800;
+    position: relative;
+   }
+    
+
+  
+  
+  .transporte-options {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px;
+  }
+  
+  .transporte-options label {
+    font-size: 1.1em;
+    color: #ffffff;
+  }
+  
+  .transporte-options select,
+  .transporte-options input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    margin-top: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  .transporte-btn {
+    padding: 12px 24px;
+    font-size: 1.1em;
+    color: white;
+    background-color: #ff6200;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .transporte-btn:hover {
+    background-color: #e55d00;
+  }
+
+  .map-container {
+    width: 400px; /* O un valor específico como '600px' */
+    height: 400px; /* O cualquier altura deseada */
+    border-radius: 8px; /* Opcional: bordes redondeados */
+    overflow: visible; /* Para que el mapa se ajuste al contenedor */
+  }
+  
+  
