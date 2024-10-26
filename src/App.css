@@ -1,13 +1,11 @@
 /* Estilos generales */
 .app-container {
   position: relative;
-  min-height: 100vh;
+  min-height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: rgb(34, 34, 34)
-  
-
 }
 
 .blur-background {

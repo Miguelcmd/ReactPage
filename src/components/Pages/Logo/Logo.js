@@ -4,15 +4,15 @@ import './Logo.css';
 const Logo = () => {
     const text = '-PepeKick-Technologies'.split('');
     const radius = 100; // Radio del círculo
-    const letterSpacing = 360 / text.length; // Separación angular entre letras
+    const letterSpacing = 360 / text.length;
 
-    // State para controlar la rotación
+    // Controlar la rotación
     const [rotation, setRotation] = useState(0);
 
     useEffect(() => {
         const interval = setInterval(() => {
             setRotation(prev => prev + 1); // Incrementa la rotación
-        }, 60); // Velocidad de rotación
+        },80); // Velocidad de rotación
 
         return () => clearInterval(interval); 
     }, []);
@@ -23,9 +23,9 @@ const Logo = () => {
             
             <div className="text-container" style={{ transform: `rotate(${rotation}deg)` }}>
                 {text.map((letter, index) => {
-                    const angle = index * letterSpacing; // Calcula el ángulo para la letra
-                    const x = radius * Math.cos((angle * Math.PI) / 180); // Calcula la posición x
-                    const y = radius * Math.sin((angle * Math.PI) / 180); // Calcula la posición y
+                    const angle = index * letterSpacing; 
+                    const x = radius * Math.cos((angle * Math.PI) / 180); 
+                    const y = radius * Math.sin((angle * Math.PI) / 180); 
 
                     return (
                         <span
@@ -36,7 +36,7 @@ const Logo = () => {
                                 position: 'absolute',
                                 left: '50%', // Centra la posición horizontalmente
                                 top: '50%',  // Centra la posición verticalmente
-                                transformOrigin: '0 0', // El origen de la transformación se establece en la esquina superior izquierda
+                                transformOrigin: '0 0', 
                             }}
                         >
                             {letter}

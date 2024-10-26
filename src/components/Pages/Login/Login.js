@@ -6,7 +6,7 @@ const Login = ({ showLogin, setShowLogin }) => {
   const closeLogin = () => setShowLogin(false);
 
   const handleSubmit = (e) => {
-    e.preventDefault(); // Aquí puedes manejar la lógica de inicio de sesión
+    e.preventDefault(); // manejar la lógica de inicio de sesión
   };
 
   return (

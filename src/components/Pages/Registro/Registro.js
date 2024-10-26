@@ -6,7 +6,7 @@ const Registro = ({ showRegistro, setShowRegistro }) => {
   const closeRegistro = () => setShowRegistro(false);
 
   const handleSubmit = (e) => {
-    e.preventDefault(); // Aquí puedes manejar la lógica de registro
+    e.preventDefault(); // manejar la lógica de registro
   };
 
   return (

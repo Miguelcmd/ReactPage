@@ -9,9 +9,9 @@ import Login from "../../Pages/Login/Login";
 
 
 const LandingPage = ({ showRegistro, setShowRegistro, showLogin, setShowLogin }) => {
-  const navigate = useNavigate();  // Definir navigate para la navegación
-  const [isAnimating, setIsAnimating] = useState(false);  // Estado para la animación
-
+  const navigate = useNavigate();  
+  const [isAnimating, setIsAnimating] = useState(false);  
+  
   const tarjetas = [
     { title: "Hospedaje", description: "Encuentra un lugar ideal para descansar", imageUrl: "/Pillow.png", route: "/hoteles" },
     { title: "Vuelos", description: "Viaja comodo a tu lugar de destino", imageUrl: "/avion.png",  route: "/vuelos" },
@@ -21,10 +21,10 @@ const LandingPage = ({ showRegistro, setShowRegistro, showLogin, setShowLogin })
 
   const handleClick = (route) => {
     if (route) {
-      navigate(route);  // Navegar a la ruta pasada como prop
+      navigate(route); 
     } else {
-      setIsAnimating(true);  // O activar animación si no hay ruta
-    }
+      setIsAnimating(true);  
+        }
   };
 
   return (
@@ -42,8 +42,8 @@ const LandingPage = ({ showRegistro, setShowRegistro, showLogin, setShowLogin })
               title={tarjeta.title}
               description={tarjeta.description}
               imageUrl={tarjeta.imageUrl}
-              route={tarjeta.route}  // Pasar la ruta al componente Tarjeta
-              onClick={() => handleClick(tarjeta.route)}  // Pasar función de click
+              route={tarjeta.route}  
+              onClick={() => handleClick(tarjeta.route)}  
             />
           ))}
         </div>

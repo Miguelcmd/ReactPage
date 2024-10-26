@@ -1,6 +1,6 @@
 .login-container {
-  background-color: white;
-  padding: 20px;
+  background-color:  rgb(243, 239, 233);
+  padding: 40px;
   border-radius: 10px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   width: 400px;
@@ -10,14 +10,14 @@
   left: 0;
   right: 0;
   }
-  
+
   .close-button {
     position: absolute;
     top: 10px;
     right: 10px;
     background: transparent;
     border: none;
-    font-size: 18px;
+    font-size: 1.5em;
     cursor: pointer;
   }
   
@@ -39,7 +39,6 @@
     border: none;
     cursor: pointer;
   }
-  
 
   @media (max-width: 600px)  {
     .login-container {

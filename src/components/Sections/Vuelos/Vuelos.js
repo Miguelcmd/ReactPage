@@ -6,64 +6,48 @@ import "./Vuelos.css";
 const transitionEffect = {
   visible: { x: "100vw", opacity: 1, transition: { duration: 0.8 } },
   exit: { x: "100vw", opacity: 1, transition: { duration: 0.6, delay: 0.8 } },
+
 };
 
 const Vuelos = () => {
   const [isAnimating, setIsAnimating] = useState(false);
 
+  const ciudades = [
+    { nombre: "París", imagen: "/paris.jpg" },
+    { nombre: "Nueva York", imagen: "/nueva-york.jpeg" },
+    { nombre: "Tokio", imagen: "/tokio.jpeg" },
+    { nombre: "Dubái", imagen: "/dubai.jpeg" }
+  ];
   useEffect(() => {
     setIsAnimating(true);
   }, []);
 
-  const getTestimonialText = (index) => {
-    const testimonials = [
-      'La experiencia fue increíble, el servicio al cliente es de primera.',
-      'Me encantó la vista desde la habitación, realmente vale la pena.',
-      'Un lugar perfecto para relajarse, 100% recomendado.',
-      'Todo fue excelente, desde la comida hasta las instalaciones.'
-    ];
-    return testimonials[index];
-  };
-
-  const imageUrls = [
-    "/image1.jpg",
-    "/image2.jpg",
-    "/image3.webp",
-    "/image4.png",
-   
-  ];
-
   return (
     <>
-      <div className="vuelo-section">
-        <div className="vuelo-header">
-          <img 
-            src="/avion.png" 
-            alt="vuelo Sign" 
-            className="vuelo-header-image" 
-          />
-          <h1>Encuentra un viaje que se acomode a tus requerimientos</h1>
-          <p>Ofrecemos una variedad de habitaciones que se adaptan a todas tus necesidades, desde suites de lujo hasta opciones más económicas.</p>
-          <button className="vuelo-btn">Reservar</button>
-        </div>
-
-        <div className="masonry-grid">
-          {['Cita 1', 'Cita 2', 'Cita 3', 'Cita 4'].map((title, index) => (
-            <div className="masonry-item" key={index}>
-              <img 
-                src={imageUrls[index]} 
-                alt={title} 
-                className="masonry-image" 
-              />
-              <div className="masonry-text">
-                <h3>{title}</h3>
-                <p>{getTestimonialText(index)}</p>
-            </div>
-              </div>
-          ))}
-        </div>
+    <div className="vuelo-section">
+      {/* Contenedor de imagen de avión */}
+      <div className="vuelo-avion-container">
+        <img src="/avion.png" alt="Avión" className="vuelo-avion-image" />
+        <h1>Descubre destinos únicos</h1>
       </div>
 
+      {/* Galería de ciudades */}
+      <div className="ciudades-gallery">
+        {ciudades.map((ciudad, index) => (
+          <div className="ciudad-item" key={index}>
+            <img src={ciudad.imagen} alt={ciudad.nombre} className="ciudad-image" />
+            <h3 className="ciudad-nombre">{ciudad.nombre}</h3>
+          </div>
+        ))}
+      </div>
+
+      {/* Opciones de reserva */}
+      <div className="reserva-opciones">
+        <h2>Reserva tu viaje</h2>
+        <p>Encuentra el destino perfecto y disfruta de una experiencia inolvidable.</p>
+        <button className="reserva-btn">Reservar ahora</button>
+      </div>
+        </div>
       <AnimatePresence>
         {isAnimating && (
           <motion.div
