@@ -6,14 +6,16 @@ import "./Transportes.css";
 
 const transitionEffect = {
     visible: { x: "100vw", opacity: 1, transition: { duration: 0.8 } },
-    exit: { x: "100vw", opacity: 1, transition: { duration: 0.6, delay: 0.8 } },
+    exit: { x: "100vw", opacity: 1, transition: { duration: 0.5, delay: 0.8 } },
   };
 
-const mapContainerStyle = {
-  width: "30rem",
-  height: "200px",
-};
-
+  const mapContainerStyle = {
+    width: "70vw",  // 90% del ancho de la ventana
+    maxWidth: "400px",
+    height: "50vh",  // 50% de la altura de la ventana
+    maxHeight: "200px",
+  };
+  
 const center = { lat: 4.711, lng: -74.0721 }; // Ubicación central (Bogotá)
 
 const Transporte = () => {

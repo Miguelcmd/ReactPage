@@ -10,7 +10,9 @@
   h1 {
     color: #ff8800;
     position: relative;
+    
    }
+   
     
 
   
@@ -18,10 +20,10 @@
   .transporte-options {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
+    align-items:stretch;
+    gap: 5px;
     width: 100%;
-    max-width: 400px;
+    max-width: 310px;
     margin-bottom: 20px;
   }
   
@@ -32,7 +34,7 @@
   
   .transporte-options select,
   .transporte-options input {
-    width: 100%;
+    width: 80%;
     padding: 10px;
     font-size: 1em;
     margin-top: 5px;
@@ -56,7 +58,7 @@
   }
 
   .map-container {
-    width: 400px; /* O un valor específico como '600px' */
+    width: 300px; /* O un valor específico como '600px' */
     height: 400px; /* O cualquier altura deseada */
     border-radius: 8px; /* Opcional: bordes redondeados */
     overflow: visible; /* Para que el mapa se ajuste al contenedor */
@@ -83,7 +85,7 @@
   }     
   
   .map-container {
-    width: 200px; /* O un valor específico como '600px' */
+    width: 90px; /* O un valor específico como '600px' */
     height: 400px; /* O cualquier altura deseada */
     border-radius: 20px; /* Opcional: bordes redondeados */
     overflow: visible; /* Para que el mapa se ajuste al contenedor */
