@@ -8,14 +8,14 @@ body, .checkout-container {
 
 /* Estilo del formulario */
 .form-control, .form-select {
-    background-color: #333;
-    color: #e0e0e0;
-    border-color: #555;
+    background-color: #1d1d1d;
+    color: #ffffff;
+    border-color: #b9b9b9;
 }
 
 .form-control:focus, .form-select:focus {
     border-color: #777;
-    background-color: #444;
+    background-color: #5a5a5a;
     color: #ffffff;
     box-shadow: none;
 }
@@ -23,7 +23,7 @@ body, .checkout-container {
 .input-group-text {
     background-color: #333;
     color: #e0e0e0;
-    border-color: #555;
+    border-color: #ffffff;
 }
 
 /* Botón de envío */
@@ -40,15 +40,22 @@ body, .checkout-container {
 /* Estilos del carrito */
 .cart-container {
     background-color: #333;
-    padding: 15px;
+    padding: 10px;
     border-radius: 8px;
-    color: #e0e0e0;
+   
 }
 
 .cart-item {
     border-bottom: 1px solid #555;
-    padding: 10px 0;
+    padding: 10px 20px;
+    background-color: #0f0f0f;
 }
 .cart-item:last-child {
     border-bottom: none;
 }
+.my-0 {
+    color: rgb(255, 255, 255);
+ }
+ .text-muted{
+    color: #007bff;
+ }

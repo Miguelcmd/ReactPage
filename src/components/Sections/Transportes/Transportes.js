@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
-import Logo from "../../Pages/Logo/Logo";
 import LogoB from "../../Pages/LogoB/LogoB";
 import "./Transportes.css";
 

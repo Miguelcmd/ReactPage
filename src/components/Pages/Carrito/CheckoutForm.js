@@ -1,6 +1,6 @@
 import React from 'react';
 import './CheckoutForm.css'; // Importa el archivo CSS personalizado
-
+import '../../../App.scss'
 const CheckoutForm = ({ showCheckoutForm, setShowCheckoutForm }) => {
     const closeCheckoutForm = () => setShowCheckoutForm(false);
 
