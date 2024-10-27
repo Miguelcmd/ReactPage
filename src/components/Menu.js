@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import './Menu.css'; // Importación del CSS del menú
 
-const Menu = ({ setShowRegistro, setShowLogin }) => {
+const Menu = ({ setShowRegistro, setShowLogin, setShowCheckoutForm }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   // Función para alternar el menú
@@ -14,6 +15,10 @@ const Menu = ({ setShowRegistro, setShowLogin }) => {
   const handleRegistroClick = () => {
     setShowRegistro(true);
     setIsOpen(false);  // Cierra el menú después de hacer clic
+  };
+  // Función para manejar el click en el botón de registro
+  const handleCheckoutFormClick = () => {
+    setShowCheckoutForm(true);
   };
 
   // Función para manejar el click en el botón de login
@@ -69,7 +74,7 @@ const Menu = ({ setShowRegistro, setShowLogin }) => {
         <ul className="menu-items">
           <li><a href="#" onClick={handleRegistroClick}>Registro</a></li>
           <li><a href="#" onClick={handleLoginClick}>Iniciar Sesión</a></li>
-          <li><a href="#">Carrito</a></li>
+          <li><Link to="/CheckoutForm" onClick={handleCheckoutFormClick}>Carrito</Link></li>
         </ul>
       </motion.nav>
     </div>

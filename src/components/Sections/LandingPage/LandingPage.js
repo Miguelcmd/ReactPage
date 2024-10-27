@@ -8,7 +8,7 @@ import Logo from "../../Pages/Logo/Logo";
 import Login from "../../Pages/Login/Login";
 
 
-const LandingPage = ({ showRegistro, setShowRegistro, showLogin, setShowLogin }) => {
+const LandingPage = ({ showRegistro, setShowRegistro, showLogin, setShowLogin, showCheckoutForm, setshowCheckoutForm }) => {
   const navigate = useNavigate();  
   const [isAnimating, setIsAnimating] = useState(false);  
   
