@@ -13,7 +13,6 @@ import CheckoutForm from "./components/Pages/Carrito/CheckoutForm";
 const App = () => {
   const [showRegistro, setShowRegistro] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
-  const [showCheckoutForm, setShowCheckoutForm] = useState(false);
 
   
   return (
@@ -35,11 +34,7 @@ const App = () => {
         <Route path="/transportes" element={< Transportes/>}/>    
         <Route path="/restaurantes" element={< Restaurantes/>}/>
         <Route path="/CVSection" element={< CVSection/>}/>
-        <Route path="/CheckoutForm" 
-        element={< CheckoutForm 
-              showCheckoutForm={showCheckoutForm}
-              setShowCheckoutForm={setShowCheckoutForm}/>}/>
-
+        <Route path="/CheckoutForm" element={< CheckoutForm/>}/>
       </Routes>
     </Router>
     

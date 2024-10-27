@@ -13,6 +13,17 @@
     z-index: 21;
   }
   
+  .menu.open {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .menu.closed {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease-in-out;
+  }
   .menu-items {
     list-style: none;
     padding: 2px;

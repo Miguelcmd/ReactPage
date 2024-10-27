@@ -8,7 +8,7 @@ import Logo from "../../Pages/Logo/Logo";
 import Login from "../../Pages/Login/Login";
 
 
-const LandingPage = ({ showRegistro, setShowRegistro, showLogin, setShowLogin, showCheckoutForm, setshowCheckoutForm }) => {
+const LandingPage = ({ showRegistro, setShowRegistro, showLogin, setShowLogin, }) => {
   const navigate = useNavigate();  
   const [isAnimating, setIsAnimating] = useState(false);  
   
@@ -43,7 +43,7 @@ const LandingPage = ({ showRegistro, setShowRegistro, showLogin, setShowLogin, s
               description={tarjeta.description}
               imageUrl={tarjeta.imageUrl}
               route={tarjeta.route}  
-              onClick={() => handleClick(tarjeta.route)}  
+              onClick={() => navigate(tarjeta.route)}  
             />
           ))}
         </div>
