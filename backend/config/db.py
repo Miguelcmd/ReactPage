@@ -1,8 +1,11 @@
-from sqlalchemy import create_engine, MetaData
 from databases import Database
+from sqlalchemy import MetaData
 
-DATABASE_URL = "mysql+aiomysql://root:1243@localhost:3306/reservas_db"
+# URL de conexión a la base de datos
+DATABASE_URL = "mysql+aiomysql://root:1243@localhost:3306/booking_db"
 
+# Instancia de la base de datos
 database = Database(DATABASE_URL)
-engine = create_engine(DATABASE_URL)
+
+# Metadata para crear tablas
 metadata = MetaData()

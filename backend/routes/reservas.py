@@ -1,7 +1,8 @@
+#reservas.py
 from fastapi import APIRouter, HTTPException
 from config.db import database
-from backend.models.Hotels.booking import reservas
-from backend.models.Hotels.schemas import Reserva
+from backend.models.booking import reservas
+from backend.models.schemas import Reserva
 from typing import List
 
 router = APIRouter()
@@ -34,6 +35,11 @@ async def obtener_reserva(reserva_id: int):
 
 @router.delete("/reservas/{reserva_id}")
 async def eliminar_reserva(reserva_id: int):
+    query = reservas.select().where(reservas.c.id == reserva_id)
+    reserva = await database.fetch_one(query)
+    if reserva is None:
+        raise HTTPException(status_code=404, detail="Reserva no encontrada")
+    
     query = reservas.delete().where(reservas.c.id == reserva_id)
     await database.execute(query)
     return {"message": "Reserva eliminada con éxito"}
