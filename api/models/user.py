@@ -7,4 +7,4 @@ class User(BaseModel):
     password: str = Field(..., min_length=6, max_length=50, description="Contraseña del usuario")
 
     class Config:
-        orm_mode = True  # Esto es útil si usas un ORM, permite el soporte para objetos ORM
+        orm_mode = True 
