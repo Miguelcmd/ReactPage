@@ -1,5 +1,7 @@
+// Registro.js
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { registerUser } from '../../services/api';
 import './Registro.css';
 
 const Registro = ({ showRegistro, setShowRegistro }) => {
@@ -28,32 +30,19 @@ const Registro = ({ showRegistro, setShowRegistro }) => {
       return;
     }
 
-    // Configuración para la solicitud a la API
     try {
-      const response = await fetch("http://127.0.0.1:8000/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          username: formData.username,
-          email: formData.email,
-          password: formData.password
-        })
+      const response = await registerUser({
+        username: formData.username,
+        email: formData.email,
+        password: formData.password
       });
 
-      if (response.ok) {
-        alert("Usuario registrado exitosamente");
-        setFormData({
-          username: '',
-          email: '',
-          password: '',
-          confirmPassword: ''
-        });
-        closeRegistro();  // Cierra el formulario de registro
+      if (response.message) {
+        alert(response.message);
+        setFormData({ username: '', email: '', password: '', confirmPassword: '' });
+        closeRegistro();
       } else {
-        const errorData = await response.json();
-        alert(`Error: ${errorData.detail}`);
+        alert(`Error: ${response.detail}`);
       }
     } catch (error) {
       console.error("Error:", error);
