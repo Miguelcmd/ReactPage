@@ -14,7 +14,6 @@ const mapContainerStyle = {
   height: "200px",
 };
 
-const center = { lat: 4.711, lng: -74.0721 }; // Ubicación central (Bogotá)
 
 const Transporte = () => {
     const [isAnimating, setIsAnimating] = useState(false);
