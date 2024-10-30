@@ -62,7 +62,7 @@ const Login = ({ showLogin, setShowLogin }) => {
             required
           />
         </div>
-        <button type="submit" className="btn btn-outline-dark">
+        <button type="submit" className="btn btn-outline-light">
           Iniciar sesión
         </button>
       </form>
