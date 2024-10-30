@@ -1,29 +1,31 @@
 // Login.js
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { loginUser } from "../../services/api";
 import "./Login.css";
 
-const Login = ({ showLogin, setShowLogin }) => {
+const Login = ({ showLogin, setShowLogin, }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-
+  const [username, setUsername] = useState(localStorage.getItem("username") || "");
   const closeLogin = () => setShowLogin(false);
+
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const token = await loginUser({ email, password });
-
-      if (token) {
-        localStorage.setItem("token", token);
-      }
-
-      setError("");
-      closeLogin();
-    } 
+  e.preventDefault();
+  try {
+    const response = await loginUser({ email, password });
     
-    catch (err) {setError("Credenciales inválidas"); 
+    if (response.token) {
+      localStorage.setItem("token", response.token);
+      localStorage.setItem("username", response.username);  // Guarda el nombre de usuario en el almacenamiento local
+      setUsername(response.username);
+    }
+    
+    setError("");
+    closeLogin();
+  } catch (err) {
+    setError("Credenciales inválidas"); 
     }
   };
 

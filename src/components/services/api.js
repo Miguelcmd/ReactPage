@@ -20,8 +20,13 @@ export const loginUser = async (loginData) => {
     },
     body: JSON.stringify(loginData)
   });
+  console.log(response.status);
   if (!response.ok) {
+    console.log(await response.json()); // Muestra el mensaje de error si es necesario
     throw new Error("Credenciales inválidas");
   }
-  return response.json();
+
+  const data = await response.json();
+  localStorage.setItem("username", data.username);
+  return data, response.json();
 };
