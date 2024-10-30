@@ -1,12 +1,30 @@
-import React from 'react';
+// Login.js
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { loginUser } from '../../services/api';
 import './Login.css';
 
 const Login = ({ showLogin, setShowLogin }) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+
   const closeLogin = () => setShowLogin(false);
 
-  const handleSubmit = (e) => {
-    e.preventDefault(); // manejar la lógica de inicio de sesión
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const token = await loginUser({ email, password });
+      
+      if (token) {
+        localStorage.setItem("token", token);  // Guarda el token en localStorage
+      }
+      
+      setError('');  // Limpia el mensaje de error en caso de éxito
+      closeLogin();  // Cierra el formulario de login
+    } catch (err) {
+      setError("Credenciales inválidas");  // Muestra un mensaje de error
+    }
   };
 
   return (
@@ -19,15 +37,30 @@ const Login = ({ showLogin, setShowLogin }) => {
       <button className="close-button" onClick={closeLogin}>X</button>
       <h2>Inicio Sesión</h2>
       <form className="login-form" onSubmit={handleSubmit}>
+        {error && <p className="error">{error}</p>}
         <div className="form-group">
           <label htmlFor="login-email">Correo electrónico:</label>
-          <input type="email" id="login-email" placeholder="Ingresa tu correo" required />
+          <input
+            type="email"
+            id="login-email"
+            placeholder="Ingresa tu correo"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
         </div>
         <div className="form-group">
           <label htmlFor="login-password">Contraseña:</label>
-          <input type="password" id="login-password" placeholder="Ingresa tu contraseña" required />
+          <input
+            type="password"
+            id="login-password"
+            placeholder="Ingresa tu contraseña"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
         </div>
-        <button type="submit" className="btn btn-outline-dark"gvf >Iniciar sesión</button>
+        <button type="submit" className="btn btn-outline-dark">Iniciar sesión</button>
       </form>
     </motion.div>
   );
