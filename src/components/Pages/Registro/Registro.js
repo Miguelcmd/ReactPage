@@ -108,7 +108,7 @@ const Registro = ({ showRegistro, setShowRegistro }) => {
             required
           />
         </div>
-        <button type="submit" className="btn btn-outline-dark">Registrarse</button>
+        <button type="submit" className="btn btn-outline-light">Registrarse</button>
       </form>
     </motion.div>
   );

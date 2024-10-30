@@ -8,7 +8,7 @@ import Logo from "../../Pages/Logo/Logo";
 import Login from "../../Pages/Login/Login";
 
 
-const LandingPage = ({ showRegistro, setShowRegistro, showLogin, setShowLogin, }) => {
+const LandingPage = ({ showRegistro, setShowRegistro, showLogin, setShowLogin, user={user}}) => {
   const navigate = useNavigate();  
   const [isAnimating, setIsAnimating] = useState(false);  
   
@@ -32,7 +32,7 @@ const LandingPage = ({ showRegistro, setShowRegistro, showLogin, setShowLogin, }
       <div className={`app-content ${showRegistro || showLogin ? 'blur-background' : ''}`}>
         <header>
           <Logo />
-          <Menu setShowRegistro={setShowRegistro} setShowLogin={setShowLogin} />
+          <Menu setShowRegistro={setShowRegistro} setShowLogin={setShowLogin} user={user} />
           <Title />
         </header>
         <div className="tarjetas-grid">

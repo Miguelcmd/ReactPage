@@ -6,24 +6,21 @@ import './Menu.css'; // Importación del CSS del menú
 const Menu = ({ setShowRegistro, setShowLogin,  }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Función para alternar el menú
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  // Función para manejar el click en el botón de registro
   const handleRegistroClick = () => {
     setShowRegistro(true);
-    setIsOpen(false);  // Cierra el menú después de hacer clic
+    setIsOpen(false);  
   };
- 
-  // Función para manejar el click en el botón de login
+   
   const handleLoginClick = () => {
     setShowLogin(true);
-    setIsOpen(false);  // Cierra el menú después de hacer clic
+    setIsOpen(false);  
   };
 
-  // Variants para la animación del menú desplegable
+  
   const menuVariants = {
     open: { x: 18, opacity: 1, transition: { duration: 0.5 } },
     closed: { x: "10%", opacity: 0, transition: { duration: 0.5 } }
