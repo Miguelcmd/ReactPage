@@ -1,4 +1,4 @@
-// client/src/services/api.js
+// /src/services/api.js
 const API_URL = "http://127.0.0.1:8000/";
 
 export const registerUser = async (userData) => {
