@@ -8,26 +8,27 @@ const Login = ({ showLogin, setShowLogin, }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [username, setUsername] = useState(localStorage.getItem("username") || "");
   const closeLogin = () => setShowLogin(false);
+  const [username, setUsername] = useState(localStorage.getItem("username") || "");
 
   const handleSubmit = async (e) => {
   e.preventDefault();
   try {
     const response = await loginUser({ email, password });
-    
-    if (response.token) {
-      localStorage.setItem("token", response.token);
-      localStorage.setItem("username", response.username);  // Guarda el nombre de usuario en el almacenamiento local
-      setUsername(response.username);
-    }
-    
-    setError("");
-    closeLogin();
-  } catch (err) {
-    setError("Credenciales inválidas"); 
+
+    setUsername(response.username); // Actualiza el nombre de usuario inmediatamente
+      setError("");
+      setShowLogin(false);
+    } catch (err) {
+      setError(err.message);    
     }
   };
+
+  useEffect(() => {
+    const storedUsername = localStorage.getItem("username");
+    if (storedUsername) setUsername(storedUsername);
+  }, [localStorage.getItem("username")]);
+
 
   return (
     <motion.div
