@@ -90,7 +90,7 @@ const Menu = ({ setShowRegistro, setShowLogin,  }) => {
           {username ? (
             <>
               <li>
-                <a href="#" onClick={toggleUserMenu}>{username}</a>
+                <a href="#" onClick={toggleUserMenu}>Hola, {username}</a>
                 {showUserMenu && (
                   <ul className="user-menu">
                     <li><Link to="/profile">Editar Perfil</Link></li>

@@ -22,7 +22,7 @@ body, .checkout-container {
 
 .input-group-text {
     background-color: #333;
-    color: #e0e0e0;
+    color:  #e0e0e0;
     border-color: #ffffff;
 }
 
@@ -48,14 +48,14 @@ body, .checkout-container {
 .cart-item {
     border-bottom: 1px solid #555;
     padding: 10px 20px;
-    background-color: #0f0f0f;
+    background-color: #dadada;
 }
 .cart-item:last-child {
     border-bottom: none;
 }
 .my-0 {
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
  }
- .text-muted{
-    color: #007bff;
+ .text-muted {
+    color: #ffffff;
  }
