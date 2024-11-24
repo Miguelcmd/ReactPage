@@ -35,6 +35,7 @@ async def register_user(user: User):
 @user_router.post("/login", response_model=dict)
 async def login_user(user: UserLogin):
     connection = get_db_connection()
+    
     if not connection:
         raise HTTPException(status_code=500, detail="Error de conexión a la base de datos")
 
@@ -49,7 +50,10 @@ async def login_user(user: UserLogin):
             raise HTTPException(status_code=401, detail="Credenciales inválidas")
 
         # Retorna un mensaje de éxito o un token si usas autenticación basada en tokens
-        return {"message": "Inicio de sesión exitoso", "user_id": db_user["id"]}
+        return {"message": "Inicio de sesión exitoso", 
+                "user_id": db_user["id"],
+                 "username": db_user["username"]
+        }
     except Error as e:
         print(f"Error al iniciar sesión: {e}")
         raise HTTPException(status_code=500, detail="Error al iniciar sesión")

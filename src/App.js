@@ -9,10 +9,19 @@ import Transportes from "./components/Sections/Transportes/Transportes";
 import Restaurantes from "./components/Sections/Restaurantes/Restaurantes";
 import CVSection from "./components/Sections/CVSection/CVSection";
 import CheckoutForm from "./components/Pages/Carrito/CheckoutForm";
+import { userData } from "three/webgpu";
+import Login from "./components/Pages/Login/Login";
 
 const App = () => {
   const [showRegistro, setShowRegistro] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
+  const [ user, setUser] = useState(null);
+
+  const handleLogin = (userData) => {
+    setUser(userData);
+    setShowLogin(false);
+    user={user}
+  }
 
   
   return (
@@ -26,6 +35,7 @@ const App = () => {
               setShowRegistro={setShowRegistro}
               showLogin={showLogin}
               setShowLogin={setShowLogin}
+              user={user}
             />
           }
         />

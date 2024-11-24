@@ -20,8 +20,37 @@ export const loginUser = async (loginData) => {
     },
     body: JSON.stringify(loginData)
   });
+  
+  console.log(response.status);
+  
   if (!response.ok) {
+    console.log(await response.json()); // Muestra el mensaje de error si es necesario
     throw new Error("Credenciales inválidas");
   }
-  return response.json();
+
+  const data = await response.json();
+  localStorage.setItem("username", data.username);
+  return data; // Ahora solo retorna data correctamente
 };
+
+export const createReservation = async (reservationData) => {
+  const response = await fetch(`${API_URL}reservations/create`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      // Si necesitas autenticación basada en token, podrías agregar un header aquí:
+      // "Authorization": `Bearer ${localStorage.getItem("token")}`
+    },
+    body: JSON.stringify(reservationData),
+  });
+
+  if (!response.ok) {
+    const errorData = await response.json();
+    console.error("Error al crear la reserva:", errorData);
+    throw new Error(errorData.detail || "Error desconocido");
+  }
+
+  return await response.json();
+};
+
+

@@ -1,29 +1,45 @@
-import React, { useState } from 'react';
+// src/components/Menu.js
+import React, { useState,useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import './Menu.css'; // Importación del CSS del menú
 
 const Menu = ({ setShowRegistro, setShowLogin,  }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [username, setUsername] = useState(null);
+  const [showUserMenu, setShowUserMenu] = useState(false);
 
-  // Función para alternar el menú
+  useEffect(() => {
+    const storedUsername = localStorage.getItem("username");
+    if (storedUsername) {
+      setUsername(storedUsername);
+    }
+  }, []);
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  // Función para manejar el click en el botón de registro
   const handleRegistroClick = () => {
     setShowRegistro(true);
-    setIsOpen(false);  // Cierra el menú después de hacer clic
+    setIsOpen(false);  
   };
- 
-  // Función para manejar el click en el botón de login
+   
   const handleLoginClick = () => {
     setShowLogin(true);
-    setIsOpen(false);  // Cierra el menú después de hacer clic
+    setIsOpen(false);  
   };
 
-  // Variants para la animación del menú desplegable
+  const handleLogout = () => {
+    localStorage.removeItem("username");
+    setUsername(null);
+    setShowUserMenu(false);
+  };
+   
+  const toggleUserMenu = () => {
+    setShowUserMenu(!showUserMenu);
+  };
+  
   const menuVariants = {
     open: { x: 18, opacity: 1, transition: { duration: 0.5 } },
     closed: { x: "10%", opacity: 0, transition: { duration: 0.5 } }
@@ -67,10 +83,28 @@ const Menu = ({ setShowRegistro, setShowLogin,  }) => {
         initial="closed"
         animate={isOpen ? "open" : "closed"}
       >
-        <ul className="menu-items">
-        <li><a href="#" onClick={() => setShowRegistro(true)}>Registro</a></li>
-          <li><a href="#" onClick={() => setShowLogin(true)}>Iniciar Sesión</a></li>
+         <ul className="menu-items">
+         <li><a href="#" onClick={handleLoginClick}>Iniciar Sesión</a></li>
+          <li><a href="#" onClick={handleRegistroClick}>Registro</a></li>
           <li><Link to="/CheckoutForm" onClick={toggleMenu}>Carrito</Link></li>
+          {username ? (
+            <>
+              <li>
+                <a href="#" onClick={toggleUserMenu}>Hola, {username}</a>
+                {showUserMenu && (
+                  <ul className="user-menu">
+                    <li><Link to="/profile">Editar Perfil</Link></li>
+                    <li><a href="#" onClick={handleLogout}>Cerrar Sesión</a></li>
+                  </ul>
+                )}
+              </li>
+            </>
+          ) : (
+            <>
+              
+            </>
+          )}
+          
         </ul>
       </motion.nav>
     </div>

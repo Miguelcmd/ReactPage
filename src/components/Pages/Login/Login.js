@@ -1,31 +1,37 @@
 // Login.js
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { loginUser } from '../../services/api';
-import './Login.css';
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { loginUser } from "../../services/api";
+import "./Login.css";
 
-const Login = ({ showLogin, setShowLogin }) => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-
+const Login = ({ showLogin, setShowLogin, }) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const closeLogin = () => setShowLogin(false);
+  const [username, setUsername] = useState(localStorage.getItem("username") || "");
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const token = await loginUser({ email, password });
-      
-      if (token) {
-        localStorage.setItem("token", token);  // Guarda el token en localStorage
-      }
-      
-      setError('');  // Limpia el mensaje de error en caso de éxito
-      closeLogin();  // Cierra el formulario de login
+  e.preventDefault();
+  try {
+    const response = await loginUser({ email, password });
+    localStorage.setItem("user_id", response.user_id);
+    localStorage.setItem("username", response.username);
+
+    setUsername(response.username); // Actualiza el nombre de usuario inmediatamente
+      setError("");
+      setShowLogin(false);
     } catch (err) {
-      setError("Credenciales inválidas");  // Muestra un mensaje de error
+      setError(err.message);    
     }
   };
+
+  useEffect(() => {
+    const storedUsername = localStorage.getItem("username");
+    if (storedUsername) setUsername(storedUsername);
+  }, [localStorage.getItem("username")]);
+  
+
 
   return (
     <motion.div
@@ -34,7 +40,9 @@ const Login = ({ showLogin, setShowLogin }) => {
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.8 }}
     >
-      <button className="close-button" onClick={closeLogin}>X</button>
+      <button className="close-button" onClick={closeLogin}>
+        X
+      </button>
       <h2>Inicio Sesión</h2>
       <form className="login-form" onSubmit={handleSubmit}>
         {error && <p className="error">{error}</p>}
@@ -60,7 +68,9 @@ const Login = ({ showLogin, setShowLogin }) => {
             required
           />
         </div>
-        <button type="submit" className="btn btn-outline-dark">Iniciar sesión</button>
+        <button type="submit" className="btn btn-outline-light">
+          Iniciar sesión
+        </button>
       </form>
     </motion.div>
   );

@@ -1,5 +1,5 @@
 .registro-container {
-  background-color: white;
+  background-color:  rgb(92, 61, 170);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
@@ -15,11 +15,12 @@
 .close-button {
   position: absolute;
   top: 30px;
-  right: 10px;
+  right: 10;
   background: transparent;
   border: none;
   font-size: 40px;
   cursor: pointer;
+  color: white;
 }
 
 .registro-form .form-group {
@@ -39,7 +40,8 @@
   color: white;
   border: none;
   cursor: pointer;
-}
+  
+} 
 
 @media (max-width: 600px)  {
   .registro-container {

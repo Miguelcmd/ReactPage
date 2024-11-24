@@ -11,14 +11,14 @@ const CheckoutForm = ({ showCheckoutForm, setShowCheckoutForm }) => {
             {/* Sección Your Cart */}
             <div className="col-md-5 col-lg-4 order-md-last">
                <h4 className="d-flex justify-content-between align-items-center mb-3">
-                  <span className="text-primary">Your cart</span>
+                  <span className="text-primary">Sus reservas</span>
                   <span className="badge bg-primary rounded-pill">3</span>
                </h4>
                <ul className="list-group mb-3 cart-container">
                   <li className="list-group-item d-flex justify-content-between lh-sm cart-item">
                      <div>
-                        <h6 className="my-0">Product name</h6>
-                        <small className="text-muted">Brief description</small>
+                        <h6 className="my-0">Nombre del producto</h6>
+                        <small className="text-muted">Breve descripcion</small>
                      </div>
                      <span className="text-muted">$12</span>
                   </li>
