@@ -3,6 +3,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import LogoB from "../../Pages/LogoB/LogoB";
 import "./Hoteles.css";
 
+const getPrice = (index) => {
+  const prices = ["$120", "$150", "$100", "$200"];
+  return prices[index];
+};
+
 const transitionEffect = {
   visible: { x: "100vw", opacity: 1, transition: { duration: 0.8 } },
   exit: { x: "100vw", opacity: 1, transition: { duration: 0.6, delay: 0.8 } },
@@ -10,6 +15,7 @@ const transitionEffect = {
 
 const Hoteles = () => {
   const [isAnimating, setIsAnimating] = useState(false);
+  const [hoveredIndex, setHoveredIndex] = useState(null);
 
   useEffect(() => {
     setIsAnimating(true);
@@ -42,14 +48,20 @@ const Hoteles = () => {
             alt="Hotel Sign" 
             className="hotel-header-image" 
           />
-          <h1>Explora Nuestras Habitaciones</h1>
-          <p>Ofrecemos una variedad de habitaciones que se adaptan a todas tus necesidades, desde suites de lujo hasta opciones más económicas.</p>
-          <button className="hotel-btn">Reservar</button>
+          <h1>Explora nuestros Hoteles</h1>
+          <p>Ofrecemos una variedad de hoteles que se adaptan a todas tus necesidades, 
+             desde suites de lujo hasta opciones más económicas.
+          </p>          
         </div>
 
         <div className="masonry-grid">
-          {['Cita 1', 'Cita 2', 'Cita 3', 'Cita 4'].map((title, index) => (
-            <div className="masonry-item" key={index}>
+          {['Hotel 1', 'Hotel 2', 'Hotel 3', 'Hotel 4'].map((title, index) => (
+            <div 
+            className="masonry-item" 
+            key={index}
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
+              >
               <img 
                 src={imageUrls[index]} 
                 alt={title} 
@@ -58,6 +70,9 @@ const Hoteles = () => {
               <div className="masonry-text">
                 <h3>{title}</h3>
                 <p>{getTestimonialText(index)}</p>
+                <button className="price-btn">
+                  {hoveredIndex === index ? "Agregar al carrito" : getPrice(index)}
+                </button>
               </div>
             </div>
           ))}
