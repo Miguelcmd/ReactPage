@@ -33,4 +33,24 @@ export const loginUser = async (loginData) => {
   return data; // Ahora solo retorna data correctamente
 };
 
+export const createReservation = async (reservationData) => {
+  const response = await fetch(`${API_URL}reservations/create`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      // Si necesitas autenticación basada en token, podrías agregar un header aquí:
+      // "Authorization": `Bearer ${localStorage.getItem("token")}`
+    },
+    body: JSON.stringify(reservationData),
+  });
+
+  if (!response.ok) {
+    const errorData = await response.json();
+    console.error("Error al crear la reserva:", errorData);
+    throw new Error(errorData.detail || "Error desconocido");
+  }
+
+  return await response.json();
+};
+
 

@@ -142,6 +142,58 @@
   color: #000000;
 }
 
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #000000;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+}
+
+.modal-content h2 {
+  margin: 0 0 10px;
+}
+
+.modal-content p {
+  margin: 10px 0;
+}
+
+.modal-buttons {
+  margin-top: 20px;
+}
+
+.modal-btn {
+  background: #ff6200;
+  color: white;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-btn.cancel {
+  background: #c82e2e;
+}
+
+.modal-btn:hover {
+  opacity: 0.9;
+}
+
 
 
 

@@ -15,6 +15,8 @@ const Login = ({ showLogin, setShowLogin, }) => {
   e.preventDefault();
   try {
     const response = await loginUser({ email, password });
+    localStorage.setItem("user_id", response.user_id);
+    localStorage.setItem("username", response.username);
 
     setUsername(response.username); // Actualiza el nombre de usuario inmediatamente
       setError("");
@@ -28,6 +30,7 @@ const Login = ({ showLogin, setShowLogin, }) => {
     const storedUsername = localStorage.getItem("username");
     if (storedUsername) setUsername(storedUsername);
   }, [localStorage.getItem("username")]);
+  
 
 
   return (

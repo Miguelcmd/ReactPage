@@ -35,6 +35,7 @@ async def register_user(user: User):
 @user_router.post("/login", response_model=dict)
 async def login_user(user: UserLogin):
     connection = get_db_connection()
+    
     if not connection:
         raise HTTPException(status_code=500, detail="Error de conexión a la base de datos")
 
