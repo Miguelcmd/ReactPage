@@ -1,6 +1,7 @@
 // /src/services/api.js
 const API_URL = "http://127.0.0.1:8000/";
 
+// Registro de usuario
 export const registerUser = async (userData) => {
   const response = await fetch(`${API_URL}users/register`, {
     method: "POST",
@@ -33,24 +34,56 @@ export const loginUser = async (loginData) => {
   return data; // Ahora solo retorna data correctamente
 };
 
+// Crear reserva
 export const createReservation = async (reservationData) => {
-  const response = await fetch(`${API_URL}reservations/create`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      // Si necesitas autenticación basada en token, podrías agregar un header aquí:
-      // "Authorization": `Bearer ${localStorage.getItem("token")}`
-    },
-    body: JSON.stringify(reservationData),
-  });
+  try {
+    const response = await fetch(`${API_URL}reservations/create`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        // Agrega token si tu backend lo requiere
+        // "Authorization": `Bearer ${localStorage.getItem("token")}`,
+      },
+      body: JSON.stringify(reservationData),
+    });
 
-  if (!response.ok) {
-    const errorData = await response.json();
-    console.error("Error al crear la reserva:", errorData);
-    throw new Error(errorData.detail || "Error desconocido");
+    if (!response.ok) {
+      const errorData = await response.json();
+      console.error("Error al crear reserva:", errorData);
+      throw new Error(errorData.detail || "Error desconocido");
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error("Error en createReservation:", error);
+    throw error;
   }
-
-  return await response.json();
 };
 
+
+
+// Obtener reservas del usuario (carrito)
+export const getUserReservations = async (userId) => {
+  try {
+    const response = await fetch(`${API_URL}reservations/user-reservations/${userId}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        // Incluye token si es necesario
+        // "Authorization": `Bearer ${localStorage.getItem("token")}`
+      },
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json();
+      console.error("Error al obtener reservas:", errorData);
+      throw new Error(errorData.detail || "Error desconocido");
+    }
+
+    return response.json();
+  } catch (error) {
+    console.error("Error al obtener las reservas:", error);
+    throw error;
+  }
+};
 
