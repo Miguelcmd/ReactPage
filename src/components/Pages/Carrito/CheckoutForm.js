@@ -1,6 +1,7 @@
+// src/components/Pages/Carrito/CheckoutForm.js
 import React, { useEffect, useState } from "react";
 import { getUserReservations } from "../../services/api";
-import './CheckoutForm.css'; // Importa el archivo CSS personalizado
+import './CheckoutForm.css'; 
 import '../../../App.scss'
 const CheckoutForm = ({ showCheckoutForm, setShowCheckoutForm }) => {
     
@@ -10,7 +11,7 @@ const CheckoutForm = ({ showCheckoutForm, setShowCheckoutForm }) => {
    
    useEffect(() => {
       const fetchReservations = async () => {
-        const userId = localStorage.getItem("user_id"); // Asegúrate de que este valor esté disponible
+        const userId = localStorage.getItem("user_id"); 
         if (!userId) {
           setError("Usuario no autenticado");
           setLoading(false);
@@ -40,6 +41,7 @@ const CheckoutForm = ({ showCheckoutForm, setShowCheckoutForm }) => {
    return (
       <div className="container checkout-container my-5">
          <div className="row">
+           
             {/* Sección Your Cart */}
             <div className="col-md-5 col-lg-4 order-md-last">
                <h4 className="d-flex justify-content-between align-items-center mb-3">
@@ -108,6 +110,7 @@ const CheckoutForm = ({ showCheckoutForm, setShowCheckoutForm }) => {
                         <select className="form-select" id="country" required>
                            <option value="">Choose...</option>
                            <option>United States</option>
+                           <option>Colombia</option>
                         </select>
                         <div className="invalid-feedback">Please select a valid country.</div>
                      </div>
@@ -116,6 +119,7 @@ const CheckoutForm = ({ showCheckoutForm, setShowCheckoutForm }) => {
                         <select className="form-select" id="state" required>
                            <option value="">Choose...</option>
                            <option>California</option>
+                           <option>Bogotá</option>
                         </select>
                         <div className="invalid-feedback">Please provide a valid state.</div>
                      </div>
