@@ -1,3 +1,4 @@
+# api/routers/reservation.py
 from fastapi import APIRouter, HTTPException
 from mysql.connector import Error
 from ..db.connection import get_db_connection
@@ -23,6 +24,28 @@ async def create_reservation(reservation: Reservation):
     except Error as e:
         print(f"Error al crear la reserva: {e}")
         raise HTTPException(status_code=500, detail="Error al crear la reserva")
+    finally:
+        cursor.close()
+        connection.close()
+
+
+@reservation_router.get("/user-reservations/{user_id}", response_model=list[Reservation])
+async def get_user_reservations(user_id: int):
+    connection = get_db_connection()
+    if not connection:
+        raise HTTPException(status_code=500, detail="Error de conexión a la base de datos")
+
+    cursor = connection.cursor(dictionary=True)
+    try:
+        cursor.execute(
+            "SELECT user_id, hotel_name, nights, total_price FROM reservations WHERE user_id = %s",
+            (user_id,)
+        )
+        reservations = cursor.fetchall()
+        return reservations
+    except Error as e:
+        print(f"Error al obtener las reservas del usuario: {e}")
+        raise HTTPException(status_code=500, detail="Error al obtener las reservas")
     finally:
         cursor.close()
         connection.close()

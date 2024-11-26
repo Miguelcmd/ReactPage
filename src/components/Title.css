@@ -6,7 +6,9 @@
     align-items:flex-start; /* Centra horizontalmente */
     top: 20px;
     left: 28%;
-    width: 300px;    
+    width: 300px;
+    transition: all 0.3s ease-in-out;
+    
     
     
   }

@@ -1,3 +1,5 @@
+// src/components/Sections/Hoteles/Hoteles.js
+
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { createReservation } from "../../services/api"; // Importar función del servicio

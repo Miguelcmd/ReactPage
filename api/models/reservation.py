@@ -1,3 +1,4 @@
+# api/models/reservation.py
 from pydantic import BaseModel, Field
 
 class Reservation(BaseModel):

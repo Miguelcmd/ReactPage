@@ -3,6 +3,7 @@
     background-color: #1f1f1f;
     height: 100%;
     width: 100%;
+
 }
 .tarjetas-container {   
     padding: 2px;
@@ -82,7 +83,7 @@
     display: flex;
     justify-content: center; 
     flex-wrap: wrap; 
-    margin: 290px auto 40px auto;
+    margin: 100px auto 40px auto;
     
 }
 }

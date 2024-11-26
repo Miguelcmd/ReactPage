@@ -1,3 +1,5 @@
+// src/components/Sections/Hoteles/ReservatioForm.js
+
 import React, { useState } from "react";
 import { createReservation } from "../services/api";
 
@@ -8,7 +10,7 @@ const ReservationForm = ({ userId }) => {
 
   const handleReservation = async () => {
     const reservationData = {
-      user_id: userId, // Proporcionado desde el contexto o props
+      user_id: userId,
       hotel_name: hotelName,
       nights: nights,
       total_price: totalPrice,

@@ -1,47 +1,72 @@
-import React from 'react';
-import './CheckoutForm.css'; // Importa el archivo CSS personalizado
+// src/components/Pages/Carrito/CheckoutForm.js
+import React, { useEffect, useState } from "react";
+import { getUserReservations } from "../../services/api";
+import './CheckoutForm.css'; 
 import '../../../App.scss'
 const CheckoutForm = ({ showCheckoutForm, setShowCheckoutForm }) => {
     
-
-
+   const [reservations, setReservations] = useState([]);
+   const [loading, setLoading] = useState(true);
+   const [error, setError] = useState(null);
+   
+   useEffect(() => {
+      const fetchReservations = async () => {
+        const userId = localStorage.getItem("user_id"); 
+        if (!userId) {
+          setError("Usuario no autenticado");
+          setLoading(false);
+          return;
+        }
+        try {
+          const data = await getUserReservations(userId);
+          setReservations(data);
+        } catch (err) {
+          setError("No se pudieron cargar las reservas");
+        } finally {
+          setLoading(false);
+        }
+      };
+  
+      fetchReservations();
+    }, []);
+  
+    if (loading) {
+      return <p>Cargando reservas...</p>;
+    }
+  
+    if (error) {
+      return <p>{error}</p>;
+    }
+  
    return (
       <div className="container checkout-container my-5">
          <div className="row">
+           
             {/* Sección Your Cart */}
             <div className="col-md-5 col-lg-4 order-md-last">
                <h4 className="d-flex justify-content-between align-items-center mb-3">
                   <span className="text-primary">Sus reservas</span>
-                  <span className="badge bg-primary rounded-pill">3</span>
+                  <span className="badge bg-primary rounded-pill">{reservations.length}</span>
                </h4>
                <ul className="list-group mb-3 cart-container">
-                  <li className="list-group-item d-flex justify-content-between lh-sm cart-item">
-                     <div>
-                        <h6 className="my-0">Nombre del producto</h6>
-                        <small className="text-muted">Breve descripcion</small>
-                     </div>
-                     <span className="text-muted">$12</span>
-                  </li>
-                  <li className="list-group-item d-flex justify-content-between lh-sm cart-item">
-                     <div>
-                        <h6 className="my-0">Second product</h6>
-                        <small className="text-muted">Brief description</small>
-                     </div>
-                     <span className="text-muted">$8</span>
-                  </li>
-                  <li className="list-group-item d-flex justify-content-between lh-sm cart-item">
-                     <div>
-                        <h6 className="my-0">Third item</h6>
-                        <small className="text-muted">Brief description</small>
-                     </div>
-                     <span className="text-muted">$5</span>
-                  </li>
-                  <li className="list-group-item d-flex justify-content-between">
-                     <span>Total (USD)</span>
-                     <strong>$25</strong>
-                  </li>
-               </ul>
-            </div>
+                  
+               {reservations.map((reservation, index) => (
+              <li key={index} className="list-group-item d-flex justify-content-between lh-sm cart-item">
+                <div>
+                  <h6 className="my-0">{reservation.hotel_name}</h6>
+                  <small className="text-muted">{reservation.nights} noches</small>
+                </div>
+                <span className="text-muted">${reservation.total_price}</span>
+              </li>
+            ))}
+            <li className="list-group-item d-flex justify-content-between">
+              <span>Total ($)</span>
+              <strong>
+                ${reservations.reduce((total, r) => total + r.total_price, 0)}
+              </strong>
+            </li>
+          </ul>
+        </div>
 
             {/* Sección Billing Address */}
             <div className="col-md-7 col-lg-8">
@@ -85,6 +110,7 @@ const CheckoutForm = ({ showCheckoutForm, setShowCheckoutForm }) => {
                         <select className="form-select" id="country" required>
                            <option value="">Choose...</option>
                            <option>United States</option>
+                           <option>Colombia</option>
                         </select>
                         <div className="invalid-feedback">Please select a valid country.</div>
                      </div>
@@ -93,6 +119,7 @@ const CheckoutForm = ({ showCheckoutForm, setShowCheckoutForm }) => {
                         <select className="form-select" id="state" required>
                            <option value="">Choose...</option>
                            <option>California</option>
+                           <option>Bogotá</option>
                         </select>
                         <div className="invalid-feedback">Please provide a valid state.</div>
                      </div>
