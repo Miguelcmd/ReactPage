@@ -1,15 +1,19 @@
 # api/config.py
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseSettings
+from pydantic_settings import BaseSettings
 import os
 from sqlalchemy.engine.url import make_url
 
 class Settings(BaseSettings):
     database_url: str
     allowed_origins: str = "http://localhost:3000"
+    db_host: str
+    db_user: str
+    db_password: str
+    db_name: str
 
     class Config:
-        env_file = f".env.{os.getenv('ENVIRONMENT', 'development')}"
+        env_file = ".env"
 
 # Validación de conexión
 settings = Settings()

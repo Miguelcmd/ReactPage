@@ -1,7 +1,7 @@
 # api/db/connection.py
 import mysql.connector
 from mysql.connector import Error
-from config import settings
+from api.config import settings
 from dotenv import load_dotenv
 import os
 
