@@ -1,0 +1,6 @@
+# api/requirements.txt
+fastapi
+uvicorn
+mysql-connector-python
+pydantic
+python-dotenv
