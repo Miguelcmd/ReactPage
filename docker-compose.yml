@@ -1,9 +1,11 @@
-version: '3.8'
+name: WebReact
 services:
   frontend:
     build:
       context: .
       dockerfile: Dockerfile
+    volumes:
+      - .:/app
     ports:
       - "3000:80"
     depends_on:
@@ -17,6 +19,7 @@ services:
       - "8000:8000"
     environment:
       DATABASE_URL: mysql://user:password@db:3306/database
+       - PYTHONPATH=/app
     depends_on:
       - db
 
@@ -29,7 +32,7 @@ services:
       MYSQL_USER: user
       MYSQL_PASSWORD: password
     ports:
-      - "3306:3306"
+      - "3307:3306"
     volumes:
       - db_data:/var/lib/mysql
 

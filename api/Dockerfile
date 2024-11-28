@@ -1,10 +1,15 @@
-FROM python:3.910slim
+FROM python:3.9-slim
+
 WORKDIR /app
-COPY ./api /app/api
-COPY ./api/requirements.txt /app/requirements.txt
-COPY ./.env /app/.env
+
+# Copiar los archivos desde el contexto actual
+COPY ./requirements.txt /app/requirements.txt
+COPY . /app
+
 RUN pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir -r /app/requirements.txt
 
 EXPOSE 8000
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+
+CMD ["uvicorn", "app.api.main:app", "--host", "0.0.0.0", "--port", "8000"]
+
